@@ -1,0 +1,66 @@
+:root {
+    --color3: #3a1a1a
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+nav {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #808080;
+}
+nav ul li{
+    padding-top: 10px;
+    list-style: none;
+}
+nav ul li a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    padding: 0 15px 0 15px;
+}
+
+.active {
+    background-color: var(--color3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.active:hover {
+    animation: active 1s alternate infinite;
+}
+@keyframes active {
+    0% {
+        padding-bottom: 0;
+        border-bottom: 0px solid var(--color3);
+    }
+    20% {
+        padding-bottom: 1px;
+        border-bottom: 0.4px solid var(--color3);
+    }
+    40% {
+        padding-bottom: 2px;
+        border-bottom: 0.8px solid var(--color3);
+    }
+    60% {
+        padding-bottom: 3px;
+        border-bottom: 1.2px solid var(--color3);
+    }
+    80% {
+        padding-bottom: 4px;
+        border-bottom: 1.6px solid var(--color3);
+    }
+    100% {
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--color3);
+    }
+}

@@ -1,6 +1,30 @@
+import {
+  createBrowserRouter,
+  Route,
+  createRoutesFromChildren,
+  RouterProvider,
+} from "react-router-dom";
+import HeaderLayout from "./layouts/HeaderLayout";
+
+//pages
 import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import SearchPage from "./pages/SearchPage";
+import CategoriesPage from "./pages/CategoriesPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
-  return <HomePage />;
+  const router = createBrowserRouter(
+    createRoutesFromChildren(
+      <Route path="/" element={<HeaderLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="search" element={<SearchPage />} />
+        <Route path="categories" element={<CategoriesPage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<ContactPage />} />
+      </Route>
+    )
+  );
+  return <RouterProvider router={router} />;
 }
 export default App;
