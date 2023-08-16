@@ -1,5 +1,4 @@
 import { useState } from "react";
-import SearchBar from "../components/SearchBar";
 
 function FoodForm({ setFood }) {
   const [name, setName] = useState("");
@@ -8,16 +7,23 @@ function FoodForm({ setFood }) {
     e.preventDefault();
     setFood(name);
   };
-
   const handleChange = (e) => {
     setName(e.target.value);
   };
   return (
-    <SearchBar
-      handleSubmit={handleSubmit}
-      handleChange={handleChange}
-      name={name}
-    />
+    <form onSubmit={handleSubmit}>
+      <div>
+        <input
+          type="text"
+          name="foodName"
+          value={name}
+          onChange={handleChange}
+          className="search-bar"
+          placeholder="Enter Food..."
+        />
+        <input type="submit" value="Search" className="submit" />
+      </div>
+    </form>
   );
 }
 
