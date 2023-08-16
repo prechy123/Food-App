@@ -63,11 +63,41 @@ nav .menu span {
 }
 
 #home {
+    position: relative;
     width: 100vw;
     width: 100dvw;
     height: calc(100vh - 124px);
     height: calc(100dvh - 124px);
     display: flex;   
+}
+#home::before {
+    position: absolute;
+    content: url(https://static01.nyt.com/images/2021/02/17/dining/17tootired-grilled-cheese/17tootired-grilled-cheese-articleLarge.jpg?quality=75&auto=webp&disable=upscale);
+    scale: 0.4;
+    filter: blur(5px);
+    filter: opacity(0.5);
+    animation: testt 10s ease-in-out infinite alternate;
+    z-index: -1;
+}
+@keyframes testt {
+    0% {
+        top: 0;
+        left: 0;
+        right: 100%;
+        bottom: 100%;
+    }  
+    /* 50% {
+        top: 100%;
+        left: 100%;
+        right: 0;
+        bottom: 0;
+    } */
+    100% {
+        top: 100%;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+    }     
 }
 #home .l-side {
     width: 50%;
@@ -99,11 +129,12 @@ nav .menu span {
     grid-template-columns: auto auto;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 10px;
-
+    cursor: grab;
 }
 #home .r-side .grid-container > *{
     background-color: var(--color2);
     border-radius: 10px;
+    cursor: pointer;
     transition: filter 500ms ease-in-out, transform 500ms ease-in-out;
 }
 #home .r-side .grid-container:hover > *:not(:hover) {
