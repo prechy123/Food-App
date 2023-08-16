@@ -33,6 +33,15 @@ nav ul li a{
     font-size: 1.3rem;
     padding: 0 15px 0 15px;
 }
+nav .menu {
+    display: none;
+}
+nav .menu span {
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+    background-color: black;
+}
 
 .active {
     background-color: var(--color3);
@@ -90,10 +99,16 @@ nav ul li a{
     grid-template-columns: auto auto;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 10px;
+
 }
 #home .r-side .grid-container > *{
     background-color: var(--color2);
     border-radius: 10px;
+    transition: filter 500ms ease-in-out, transform 500ms ease-in-out;
+}
+#home .r-side .grid-container:hover > *:not(:hover) {
+    filter: blur(4px);
+    transform: scale(0.9);
 }
 #home .r-side .grid-container .grid-item-1{
     grid-row: span 2;
@@ -124,4 +139,16 @@ footer {
     justify-content: space-between;
     padding: 10px;
     background-color: var(--color1);
+}
+
+@media screen and (max-width: 674px) {
+    nav ul{
+        display: none;
+    }
+    nav .menu {
+        display: inline-block;
+    }
+    nav .menu span{
+        display: block;
+    }
 }

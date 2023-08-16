@@ -17,6 +17,11 @@ export default function HeaderLayout() {
             <NavLink to="/contact">Contact us</NavLink>
           </li>
         </ul>
+        <div className="menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </nav>
       <Outlet />
     </>

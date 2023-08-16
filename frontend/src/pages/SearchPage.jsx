@@ -22,19 +22,19 @@ export default function SearchPage() {
   }, [food]);
 
   return (
-    <>
+    <section id="search-page">
       <FoodForm setFood={setFood} />
       {theMeals
         ? theMeals.meals.map((meal) => {
             return (
-              <ol>
-                <li>
-                  <MealCom meal={meal} key={meal.idMeal} />
-                </li>
-              </ol>
+              <div>
+                <MealCom meal={meal} key={meal.idMeal} />
+              </div>
             );
           })
         : ""}
-    </>
+        
+    </section>
   );
 }
+
