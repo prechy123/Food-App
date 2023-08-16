@@ -8,10 +8,10 @@ import HeaderLayout from "./layouts/HeaderLayout";
 
 //pages
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
 import SearchPage from "./pages/SearchPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import ContactPage from "./pages/ContactPage";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -20,7 +20,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="categories" element={<CategoriesPage />} />
-        <Route path="about" element={<AboutPage />} />
+        <Route path="product" element={<ProductPage />} />
         <Route path="contact" element={<ContactPage />} />
       </Route>
     )

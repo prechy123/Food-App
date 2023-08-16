@@ -13,7 +13,7 @@ export default function HeaderLayout() {
             <NavLink to="/">HOME</NavLink>
             <NavLink to="/search">Search Food</NavLink>
             <NavLink to="/categories">Categories</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/product">Product</NavLink>
             <NavLink to="/contact">Contact us</NavLink>
           </li>
         </ul>

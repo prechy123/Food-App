@@ -15,9 +15,7 @@ export default function SearchPage() {
       const response = await axios(
         "https://www.themealdb.com/api/json/v1/1/search.php?s=" + food
       );
-      // const json = await response.json();
       setMeals(response.data);
-      console.log(response.data);
     };
     if (food.length > 0) {
       fetchFood();
