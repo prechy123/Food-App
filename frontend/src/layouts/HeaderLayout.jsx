@@ -13,8 +13,9 @@ export default function HeaderLayout() {
             <NavLink to="/">HOME</NavLink>
             <NavLink to="/search">Search Food</NavLink>
             <NavLink to="/categories">Categories</NavLink>
-            <NavLink to="/product">Product</NavLink>
+            {/* <NavLink to="/product">Product</NavLink> */}
             <NavLink to="/contact">Contact us</NavLink>
+            <NavLink>Account</NavLink>
           </li>
         </ul>
         <div className="menu">
