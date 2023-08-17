@@ -1,14 +1,19 @@
 import express from "express";
-import { getAllFood, getOneFood, addOneFood, deleteOneFood } from "../controllers/foodController.mjs";
+import {
+  getAllFood,
+  getOneFood,
+  addOneFood,
+  deleteOneFood,
+} from "../controllers/foodController.mjs";
 
 const router = express.Router();
 
-router.get("/", getAllFood);
+router.get("/foods", getAllFood);
 
-router.get("/:id", getOneFood);
+router.get("/food/:id", getOneFood);
 
-router.post("/", addOneFood);
+router.post("/food", addOneFood);
 
-router.delete("/:id", deleteOneFood);
+router.delete("/food/:id", deleteOneFood);
 
 export default router;

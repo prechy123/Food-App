@@ -28,9 +28,9 @@ export const getOneFood = async (req, res) => {
 };
 
 export const addOneFood = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
-  await Food.create({ username, password })
+  await Food.create({ email, password })
     .then((doc) => {
       res.status(200).json(doc);
     })

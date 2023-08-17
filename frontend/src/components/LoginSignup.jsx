@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-export default function LoginSignup({ signup, login }) {
+export default function LoginSignup({ signup, login, enterAccount }) {
   const [email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, Password);
+    enterAccount(email, Password);
   };
   return (
     <>
