@@ -21,6 +21,7 @@ nav {
     justify-content: space-between;
     padding: 10px;
     background-color: var(--color1);
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 nav ul li{
     padding-top: 10px;
@@ -70,6 +71,7 @@ nav .menu span {
     height: calc(100vh - 124px);
     height: calc(100dvh - 124px);
     display: flex;   
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 #home::before {
     position: absolute;
@@ -168,6 +170,7 @@ footer {
     justify-content: space-between;
     padding: 10px;
     background-color: var(--color1);
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
 @media screen and (max-width: 674px) {
@@ -193,6 +196,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 #search-page form{
     background-color: var(--color3);
@@ -231,11 +235,9 @@ footer {
     overflow-y: scroll;
     padding: 20px;
 }
-#search-page .component .search-component {
-    transition: filter 1s ease;
-}
 #search-page .component:hover >*:not(:hover) {
-    filter: blur(1px);
+    transition: filter 5s ease-in-out;
+    filter: grayscale(100%);
 }
 #search-page .component .search-component .search-img-d {
     display: flex;
@@ -261,6 +263,7 @@ footer {
     height: calc(100dvh - 124px);
     overflow-y: scroll;
     padding: 20px;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 #categories-page div {
     width: 100%;
@@ -297,6 +300,7 @@ footer {
     height: calc(100dvh - 124px);
     padding: 20px;
     overflow-y: scroll;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 #product-page .product-component{
     display: grid;
