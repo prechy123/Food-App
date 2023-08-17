@@ -12,6 +12,7 @@ import SearchPage from "./pages/SearchPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import ContactPage from "./pages/ContactPage";
 import ProductPage from "./pages/ProductPage";
+import AccountPage from "./pages/AccountPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -22,6 +23,7 @@ function App() {
         <Route path="categories" element={<CategoriesPage />} />
         <Route path="product/:id" element={<ProductPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="account" element={<AccountPage />} />
       </Route>
     )
   );

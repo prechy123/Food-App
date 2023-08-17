@@ -2,10 +2,14 @@ import mongoose from "mongoose";
 
 const foodSchema = mongoose.Schema(
   {
-    _id: Number,
-    foodName: String,
-    foodImg: String,
-    foodProcedure: String,
+    username: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

@@ -10,7 +10,7 @@ function FoodForm({ setFood }) {
   const handleChange = (e) => {
     setName(e.target.value);
   };
-  //eeken
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
