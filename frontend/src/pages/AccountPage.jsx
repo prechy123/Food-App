@@ -16,8 +16,8 @@ export default function AccountPage() {
       setLogin(!login);
     }
   };
-  function test(content) {
-    console.log(content);
+  function enterAccount(email, password) {
+    console.log(email, password);
   }
   return (
     <section id="account-page">
@@ -25,7 +25,11 @@ export default function AccountPage() {
         Already have an account <button onClick={handleLogin}>login</button>, if
         not <button onClick={handleSignup}>Signup</button>
       </h1>
-      <LoginSignup login={login} signup={signup} test={test} />
+      <LoginSignup
+        login={login}
+        signup={signup}
+        enterAccount={enterAccount}
+      />
     </section>
   );
 }

@@ -1,34 +1,28 @@
 import React, { useState } from "react";
 
 export default function LoginSignup({ signup, login }) {
-  const [signupText, setSignupText] = useState("");
-  const [signupPassword, setSignupPassword] = useState("");
-  const handleSubmitSignup = (e) => {
+  const [email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(signupText, signupPassword);
-  };
-  const [loginText, setLoginText] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  const handleSubmitLogin = (e) => {
-    e.preventDefault();
-    console.log(loginText, loginPassword);
+    console.log(email, Password);
   };
   return (
     <>
       {signup && (
         <div className="Signup">
-          <form method="post" onSubmit={handleSubmitSignup}>
+          <form method="post" onSubmit={handleSubmit}>
             <input
-              type="text"
-              name="username"
-              value={signupText}
-              onChange={(e) => setSignupText(e.target.value)}
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               name="password"
-              value={signupPassword}
-              onChange={(e) => setSignupPassword(e.target.value)}
+              value={Password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <input type="submit" value="Signup" />
           </form>
@@ -36,16 +30,18 @@ export default function LoginSignup({ signup, login }) {
       )}
       {login && (
         <div className="login">
-          <form method="post" onSubmit={handleSubmitLogin}>
+          <form method="post" onSubmit={handleSubmit}>
             <input
               type="text"
               name="username"
-              onChange={(e) => setLoginText(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
             <input
               type="password"
               name="password"
-              onChange={(e) => setLoginPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
+              value={Password}
             />
             <input type="submit" value="Login" />
           </form>
