@@ -1,11 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import "dotenv/config";
-import router from "./routes/foodRoutes.mjs";
+import router from "./routes/userRoutes.mjs";
 
 
 const app = express();
-
 
 app.use(express.json());
 

@@ -5,7 +5,7 @@ import axios from "axios";
 export default function AccountPage() {
   const [login, setLogin] = useState(false);
   const [signup, setSignup] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  // const [isAuthenticated, setIsAuthenticated] = useState(false)
   const handleLogin = () => {
     setLogin(!login);
     if (signup) {
@@ -23,7 +23,7 @@ export default function AccountPage() {
       email,
       password,
     };
-    const response = await axios.post("/food", account);
+    const response = await axios.post("/user", account);
     console.log(response.data);
     if (!response.ok) {
       console.log(response.data.error);
