@@ -38,6 +38,14 @@ export const addOneFood = async (req, res) => {
       res.status(400).json({ error: err.message });
     });
 };
+export const findOneOrCreate = async (req, res) => {
+  const {email, password} = req.body;
+
+  await Food.findOne({email})
+    .then((doc) => {
+
+    })
+}
 
 export const deleteOneFood = async (req, res) => {
   const { id } = req.params;

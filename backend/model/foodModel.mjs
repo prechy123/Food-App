@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const foodSchema = mongoose.Schema(
+const userSchema = mongoose.Schema(
   {
     email: {
       type: String,
@@ -10,10 +10,11 @@ const foodSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    food: []
   },
   { timestamps: true }
 );
 
-const Food = mongoose.model("food", foodSchema);
+const User = mongoose.model("user", userSchema);
 
-export default Food;
+export default User;
