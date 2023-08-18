@@ -11,6 +11,7 @@ app.use(
     origin: "*",
   })
 );
+
 app.use(express.json());
 
 app.use("/", router);
