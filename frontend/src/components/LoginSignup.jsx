@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-export default function LoginSignup({ signup, login, createAccount, loginAccount }) {
+export default function LoginSignup({
+  signup,
+  login,
+  createAccount,
+  loginAccount,
+}) {
   const [signupEmail, setSignupEmail] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
@@ -16,40 +21,64 @@ export default function LoginSignup({ signup, login, createAccount, loginAccount
   return (
     <>
       {signup && (
-        <div className="Signup">
+        <div className="signup">
+          <h2>Create a new account</h2>
           <form method="post" onSubmit={handleSignupSubmit}>
-            <input
-              type="email"
-              name="email"
-              value={signupEmail}
-              onChange={(e) => setSignupEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              name="password"
-              value={signupPassword}
-              onChange={(e) => setSignupPassword(e.target.value)}
-            />
-            <input type="submit" value="Signup" />
+            <div className="inputbox">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={signupEmail}
+                onChange={(e) => setSignupEmail(e.target.value)}
+                required
+              />
+              <span>Email Address</span>
+            </div>
+            <div className="inputbox">
+              <input
+                id="password"
+                type="password"
+                name="password"
+                value={signupPassword}
+                onChange={(e) => setSignupPassword(e.target.value)}
+                minLength={10}
+                required
+              />
+              <span>Password</span>
+            </div>
+            <input type="submit" value="Signup" id="submit" />
           </form>
         </div>
       )}
       {login && (
         <div className="login">
+          <h2>Log in to account</h2>
           <form method="post" onSubmit={handleLoginSubmit}>
-            <input
-              type="text"
-              name="username"
-              onChange={(e) => setLoginEmail(e.target.value)}
-              value={loginEmail}
-            />
-            <input
-              type="password"
-              name="password"
-              onChange={(e) => setLoginPassword(e.target.value)}
-              value={loginPassword}
-            />
-            <input type="submit" value="Login" />
+            <div className="inputbox">
+              <input
+                id="email"
+                type="text"
+                name="username"
+                onChange={(e) => setLoginEmail(e.target.value)}
+                value={loginEmail}
+                required
+              />
+              <span>Email Address</span>
+            </div>
+            <div className="inputbox">
+              <input
+                id="password"
+                type="password"
+                name="password"
+                onChange={(e) => setLoginPassword(e.target.value)}
+                value={loginPassword}
+                minLength={10}
+                required
+              />
+              <span>Password</span>
+            </div>
+            <input type="submit" value="Login" id="submit" />
           </form>
         </div>
       )}
