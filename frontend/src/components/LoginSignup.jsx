@@ -13,10 +13,14 @@ export default function LoginSignup({
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     createAccount(signupEmail, signupPassword);
+    setSignupEmail("");
+    setSignupPassword("");
   };
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     loginAccount(loginEmail, loginPassword);
+    setLoginEmail("");
+    setLoginPassword("");
   };
   return (
     <>
