@@ -25,6 +25,7 @@ export const loginAccount = async (req, res) => {
   const { email, password } = req.body;
   try {
     const existingUser = await User.findOne({ email });
+    if (existingUser) {
     const encyptedPassword = await bcrypt.compare(
       password,
       existingUser.password
@@ -32,8 +33,11 @@ export const loginAccount = async (req, res) => {
     if (encyptedPassword) {
       res.status(200).json({ message: "account successfully logged in" });
     } else {
-      res.status(400).json({ message: "Account not found hahahah" });
+      res.status(400).json({ message: "Incorrect password" });
     }
+  } else {
+    res.status(400).json({message: "Email does not exist"})
+  }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
