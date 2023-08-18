@@ -13,16 +13,21 @@ function FoodForm({ setFood }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <input
-          type="text"
-          name="foodName"
-          value={name}
-          onChange={handleChange}
-          className="search-bar"
-          placeholder="Enter Food..."
-        />
-        <input type="submit" value="Search" className="submit" />
+      <div className="inputs">
+        <div className="input-text">
+          <input
+            type="text"
+            name="foodName"
+            value={name}
+            onChange={handleChange}
+            className="search-bar"
+            required
+          />
+          <span>Enter food</span>
+        </div>
+        <div className="submit">
+          <input type="submit" value="Search" className="submit" />
+        </div>
       </div>
     </form>
   );
