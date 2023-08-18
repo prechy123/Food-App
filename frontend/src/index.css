@@ -261,6 +261,9 @@ nav .menu span {
 }
 #search-page .component .search-component .search-img-d .search-img img{
     border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color1);
 }
 #search-page .component .search-component .search-img-d h2 {
     background-color: var(--color3);
