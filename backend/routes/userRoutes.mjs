@@ -1,8 +1,10 @@
 import express from "express";
-import { findOneOrCreate } from "../controllers/userController.mjs";
+import { loginAccount, signupAccount } from "../controllers/userController.mjs";
 
 const router = express.Router();
 
-router.post("/user", findOneOrCreate);
+router.post("/signupAccount", signupAccount);
+router.post("/loginAccount", loginAccount);
+// router.post("/addfood/:userId", addFood)
 
 export default router;
