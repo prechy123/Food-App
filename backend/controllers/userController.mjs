@@ -51,16 +51,16 @@ export const loginAccount = async (req, res) => {
   }
 };
 
-// export const getFoods = (req, res) => {
-//   //using chaining operator (?.) incase req.header.cookir returns null or undefined
-//   const sessionId = req.headers.cookie?.split("=")[1];
-//   const userSession = sessions[sessionId];
-//   if (!userSession) {
-//     return res.json({ message: "Invalid session" });
-//   }
-//   const userId = userSession.userId;
-//   res.send({
-//     title: "So its working hahaha",
-//     userId,
-//   });
-// };
+export const getFoods = (req, res) => {
+  //using chaining operator (?.) incase req.header.cookir returns null or undefined
+  const sessionId = req.headers.cookie?.split("=")[1];
+  const userSession = sessions[sessionId];
+  if (!userSession) {
+    return res.json({ message: "Invalid session" });
+  }
+  const userId = userSession.userId;
+  res.send({
+    title: "So its working hahaha",
+    userId,
+  });
+};
