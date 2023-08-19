@@ -1,10 +1,10 @@
 import express from "express";
-import { loginAccount, signupAccount } from "../controllers/userController.mjs";
+import { getFoods, loginAccount, signupAccount } from "../controllers/userController.mjs";
 
 const router = express.Router();
 
 router.post("/signupAccount", signupAccount);
 router.post("/loginAccount", loginAccount);
-// router.post("/addfood/:userId", addFood)
+router.get("/getFoods", getFoods)
 
 export default router;
