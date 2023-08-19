@@ -67,3 +67,11 @@ export const getFoods = async (req, res) => {
     food: user.food,
   });
 };
+
+export const logOut = (req, res) => {
+  const sessionId = req.headers.cookie?.split("=")[1];
+  delete sessions[sessionId];
+  //to clear cookies
+  res.set("Set-Cookie", "session=; expires=Thu, 01 Jan 1970 00:00:00 GMT");
+  res.send("Logged out successfully.");
+};
