@@ -51,16 +51,19 @@ export const loginAccount = async (req, res) => {
   }
 };
 
-export const getFoods = (req, res) => {
+export const getFoods = async (req, res) => {
   //using chaining operator (?.) incase req.header.cookir returns null or undefined
   const sessionId = req.headers.cookie?.split("=")[1];
   const userSession = sessions[sessionId];
   if (!userSession) {
     return res.json({ message: "Invalid session" });
   }
-  const userId = userSession.userId;
+  const { userId, email } = userSession;
+  const user = await User.findOne({ _id: userId });
   res.send({
     title: "So its working hahaha",
+    email,
     userId,
+    food: user.food,
   });
 };
