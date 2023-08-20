@@ -4,6 +4,7 @@ import { v4 as uuid } from "uuid";
 
 const sessions = {};
 
+
 export const signupAccount = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -51,19 +52,16 @@ export const loginAccount = async (req, res) => {
   }
 };
 
-export const getFoods = async (req, res) => {
+export const getFoods = (req, res) => {
   //using chaining operator (?.) incase req.header.cookir returns null or undefined
   const sessionId = req.headers.cookie?.split("=")[1];
   const userSession = sessions[sessionId];
   if (!userSession) {
     return res.json({ message: "Invalid session" });
   }
-  const { userId, email } = userSession;
-  const user = await User.findOne({ _id: userId });
+  const userId = userSession.userId;
   res.send({
     title: "So its working hahaha",
-    email,
     userId,
-    food: user.food,
   });
 };
