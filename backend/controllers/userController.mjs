@@ -17,6 +17,12 @@ export const signupAccount = async (req, res) => {
         password: encryptedPassword,
       });
       await newUser.save();
+      // const user = await User.findOne({ email });
+      // const token = jwt.sign(
+      //   { userId: user._id },
+      //   process.env.MY_SECRET,
+      //   { expiresIn: "1h" }
+      // );
       // await User.create({ email, password: encryptedPassword });
       res.status(200).json({ message: "Account successfully created" });
     }
@@ -44,11 +50,7 @@ export const loginAccount = async (req, res) => {
         //which must be an object and here is it specified as userId only getting the object Id of the find user
         //and creates and hash, the MY_SECRET env prevent any outside users from accessing it, and the expiration date of jwt token
         //the shorter the more secured
-        res.cookie("token", token, {
-          httpOnly: true,
-          secure: true,
-          sameSite: "None",
-        });
+        res.cookie("token", token);
         res.status(200).json({ message: "account successfully logged in" });
       } else {
         res.json({ message: "Incorrect password" });
@@ -78,8 +80,8 @@ export const getFoods = async (req, res) => {
   });
 };
 export const addFood = (req, res) => {
-  res.status(200).json({food: "added"})
-}
+  res.status(200).json({ food: "added" });
+};
 
 export const logOut = (req, res) => {
   const sessionId = req.headers.cookie?.split("=")[1];

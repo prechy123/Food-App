@@ -48,6 +48,7 @@ export default function AccountPage() {
         account,
         { withCredentials: true }
       );
+      
       console.log(response.data);
     } catch (error) {
       console.log(error.message);
