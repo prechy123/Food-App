@@ -62,7 +62,7 @@ export default function LoginSignup({
             <div className="inputbox">
               <input
                 id="email"
-                type="text"
+                type="email"
                 name="username"
                 onChange={(e) => setLoginEmail(e.target.value)}
                 value={loginEmail}

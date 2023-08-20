@@ -24,10 +24,12 @@ export default function AccountPage() {
       email,
       password,
     };
+    //add credentials: 'include' for axios
     try {
       const response = await axios.post(
         "http://127.0.0.1:4000/signupAccount",
-        account
+        account,
+        { withCredentials: true }
       );
       console.log(response.data);
     } catch (error) {
@@ -43,7 +45,8 @@ export default function AccountPage() {
     try {
       const response = await axios.post(
         "http://127.0.0.1:4000/loginAccount",
-        account
+        account,
+        { withCredentials: true }
       );
       console.log(response.data);
     } catch (error) {
@@ -58,8 +61,12 @@ export default function AccountPage() {
           <div className="title">
             <h1>Already have an account </h1>
             <div>
-              <button onClick={handleLogin}><span></span>login</button>
-              <button onClick={handleSignup}><span></span>Signup</button>
+              <button onClick={handleLogin}>
+                <span></span>login
+              </button>
+              <button onClick={handleSignup}>
+                <span></span>Signup
+              </button>
             </div>
           </div>
           <div className="login-signup">
