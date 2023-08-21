@@ -37,22 +37,23 @@ export const loginAccount = async (req, res) => {
       if (checkPassword) {
         const token = jwt.sign(
           { userId: existingUser._id },
-          process.env.MY_SECRET,
-          { expiresIn: "1h" }
+          process.env.MY_SECRET
         );
-        //the jwt.sign function takes in the existingUser object from the db, it checks the object payload
-        //which must be an object and here is it specified as userId only getting the object Id of the find user
-        //and creates and hash, the MY_SECRET env prevent any outside users from accessing it, and the expiration date of jwt token
-        //the shorter the more secured
-        res.cookie("token", token, {
+        res.cookie("jwt", token, {
+          // maxAge: 60000,
           httpOnly: true,
-          secure: true,
-          sameSite: "None",
+          secure: false,
+          sameSite: "none",
+          domain: "localhost",
         });
         res.status(200).json({ message: "account successfully logged in" });
       } else {
         res.json({ message: "Incorrect password" });
       }
+      //the jwt.sign function takes in the existingUser object from the db, it checks the object payload
+      //which must be an object and here is it specified as userId only getting the object Id of the find user
+      //and creates and hash, the MY_SECRET env prevent any outside users from accessing it, and the expiration date of jwt token
+      //the shorter the more secured
     } else {
       res.json({ message: "Email does not exist" });
     }
@@ -78,8 +79,8 @@ export const getFoods = async (req, res) => {
   });
 };
 export const addFood = (req, res) => {
-  res.status(200).json({food: "added"})
-}
+  res.status(200).json({ food: "added" });
+};
 
 export const logOut = (req, res) => {
   const sessionId = req.headers.cookie?.split("=")[1];
