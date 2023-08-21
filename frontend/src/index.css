@@ -334,10 +334,16 @@ footer {
     height: auto;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 12px;
     background-color: var(--color1);
     /* background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); */
 }
+footer .img {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
 
 #account-page {
     width: 100vw;

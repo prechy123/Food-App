@@ -32,7 +32,8 @@ export default function AccountPage() {
         account,
         { withCredentials: true }
       );
-      console.log(response.data);
+      console.log(response.data.message);
+      Cookie.set("token", response.data.token )
     } catch (error) {
       console.log(error.message);
     }
