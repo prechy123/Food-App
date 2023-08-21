@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LoginSignup from "../components/LoginSignup";
 import FooterLayout from "../layouts/FooterLayout";
 import axios from "axios";
+import Cookie from "js-cookie";
 
 export default function AccountPage() {
   const [login, setLogin] = useState(false);
@@ -48,7 +49,9 @@ export default function AccountPage() {
         account,
         { withCredentials: true }
       );
-      console.log(response.data);
+      console.log(response.data.message);
+      Cookie.set("token", response.data.token, { sameSite: "none", httpOnly: true });
+      // console.log(response.data.token);
     } catch (error) {
       console.log(error.message);
     }

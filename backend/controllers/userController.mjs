@@ -39,14 +39,14 @@ export const loginAccount = async (req, res) => {
           { userId: existingUser._id },
           process.env.MY_SECRET
         );
-        res.cookie("jwt", token, {
-          // maxAge: 60000,
-          httpOnly: true,
-          secure: false,
-          sameSite: "none",
-          domain: "localhost",
-        });
-        res.status(200).json({ message: "account successfully logged in" });
+        // res.cookie("jwt", token, {
+        //   // maxAge: 60000,
+        //   httpOnly: true,
+        //   secure: true,
+        //   sameSite: "none",
+        //   // domain: "localhost",
+        // });
+        res.status(200).json({ message: "account successfully logged in", token: token});
       } else {
         res.json({ message: "Incorrect password" });
       }
