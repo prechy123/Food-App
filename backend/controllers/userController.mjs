@@ -1,6 +1,5 @@
 import User from "../model/userModel.mjs";
 import bcrypt from "bcrypt";
-// import { v4 as uuid } from "uuid";
 import "dotenv/config";
 import jwt from "jsonwebtoken";
 
@@ -17,7 +16,6 @@ export const signupAccount = async (req, res) => {
         password: encryptedPassword,
       });
       await newUser.save();
-      // await User.create({ email, password: encryptedPassword });
       res.status(200).json({ message: "Account successfully created" });
     }
   } catch (error) {
@@ -39,21 +37,11 @@ export const loginAccount = async (req, res) => {
           { userId: existingUser._id },
           process.env.MY_SECRET
         );
-        // res.cookie("jwt", token, {
-        //   // maxAge: 60000,
-        //   httpOnly: true,
-        //   secure: true,
-        //   sameSite: "none",
-        //   // domain: "localhost",
-        // });
         res.status(200).json({ message: "account successfully logged in", token: token});
       } else {
         res.json({ message: "Incorrect password" });
       }
-      //the jwt.sign function takes in the existingUser object from the db, it checks the object payload
-      //which must be an object and here is it specified as userId only getting the object Id of the find user
-      //and creates and hash, the MY_SECRET env prevent any outside users from accessing it, and the expiration date of jwt token
-      //the shorter the more secured
+      
     } else {
       res.json({ message: "Email does not exist" });
     }
