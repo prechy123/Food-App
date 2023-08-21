@@ -16,6 +16,18 @@ export const signupAccount = async (req, res) => {
         password: encryptedPassword,
       });
       await newUser.save();
+      try {
+        const existingUser = await User.findOne({ email: email });
+        const token = jwt.sign(
+          { userId: existingUser._id },
+          process.env.MY_SECRET
+        );
+        return res
+          .status(200)
+          .json({ message: "token created successfully", token: token });
+      } catch (err) {
+        res.status(400).json({ message: err.message });
+      }
       res.status(200).json({ message: "Account successfully created" });
     }
   } catch (error) {
@@ -37,11 +49,12 @@ export const loginAccount = async (req, res) => {
           { userId: existingUser._id },
           process.env.MY_SECRET
         );
-        res.status(200).json({ message: "account successfully logged in", token: token});
+        return res
+          .status(200)
+          .json({ message: "account successfully logged in", token: token });
       } else {
         res.json({ message: "Incorrect password" });
       }
-      
     } else {
       res.json({ message: "Email does not exist" });
     }

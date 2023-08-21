@@ -50,7 +50,7 @@ export default function AccountPage() {
         { withCredentials: true }
       );
       console.log(response.data.message);
-      Cookie.set("token", response.data.token, { sameSite: "none", httpOnly: true });
+      Cookie.set("token", response.data.token );
       // console.log(response.data.token);
     } catch (error) {
       console.log(error.message);
