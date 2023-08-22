@@ -8,7 +8,7 @@ import expirationTime from "../calculate/expirationTime";
 export default function AccountPage() {
   const [login, setLogin] = useState(false);
   const [signup, setSignup] = useState(false);
-  // const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const handleLogin = () => {
     setLogin(!login);
     if (signup) {
@@ -26,7 +26,6 @@ export default function AccountPage() {
       email,
       password,
     };
-    //add credentials: 'include' for axios
     try {
       const response = await axios.post(
         "http://127.0.0.1:4000/signupAccount",
@@ -39,6 +38,9 @@ export default function AccountPage() {
         sameSite: "None",
         secure: true,
       });
+      if (Cookies.get("token") === response.data.token) {
+        setIsAuthenticated(true);
+      }
     } catch (error) {
       console.log(error.message);
     }
@@ -61,38 +63,44 @@ export default function AccountPage() {
         sameSite: "None",
         secure: true,
       });
+      if (Cookies.get("token") === response.data.token) {
+        setIsAuthenticated(true);
+      }
+
       console.log(response.data.token);
     } catch (error) {
       console.log(error.message);
     }
   };
 
-
-
   return (
     <>
       <section id="account-page">
-        <div>
-          <div className="title">
-            <h1>Already have an account </h1>
-            <div>
-              <button onClick={handleLogin}>
-                <span></span>login
-              </button>
-              <button onClick={handleSignup}>
-                <span></span>Signup
-              </button>
+        {isAuthenticated ? (
+          ""
+        ) : (
+          <div>
+            <div className="title">
+              <h1>Already have an account </h1>
+              <div>
+                <button onClick={handleLogin}>
+                  <span></span>login
+                </button>
+                <button onClick={handleSignup}>
+                  <span></span>Signup
+                </button>
+              </div>
+            </div>
+            <div className="login-signup">
+              <LoginSignup
+                login={login}
+                signup={signup}
+                createAccount={createAccount}
+                loginAccount={loginAccount}
+              />
             </div>
           </div>
-          <div className="login-signup">
-            <LoginSignup
-              login={login}
-              signup={signup}
-              createAccount={createAccount}
-              loginAccount={loginAccount}
-            />
-          </div>
-        </div>
+        )}
       </section>
       <FooterLayout />
     </>
