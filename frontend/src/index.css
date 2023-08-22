@@ -256,7 +256,7 @@ nav .menu span {
 }
 #search-page .component:hover >*:not(:hover) {
     transition: filter 5s ease-in-out;
-    filter: grayscale(100%);
+    filter: grayscale(50%);
 }
 #search-page .component .search-component .search-img-d {
     display: flex;
