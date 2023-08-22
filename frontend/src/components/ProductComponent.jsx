@@ -21,7 +21,7 @@ export default function ProductComponent({ meal }) {
         <br></br>
         <em>{meal.strArea}</em>
         <p>{meal.strInstructions}</p>
-        <button onClick={handleAddClick}>Save Food</button>
+        <button onClick={handleAddClick} className="save-food">Save Food</button>
       </div>
       <img src={meal.strMealThumb} alt={meal.strMeal} />
     </div>
