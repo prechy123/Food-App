@@ -498,7 +498,7 @@ nav .menu span {
     height: 10px;
     width: 80px;
     display: block;
-    background-color: wheat;
+    background-color: var(--color1);
     position: relative;
     animation: loading-span 1s ease-out infinite alternate;
 }

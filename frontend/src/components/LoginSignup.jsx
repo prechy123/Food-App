@@ -23,7 +23,7 @@ export default function LoginSignup({
     setLoadingState(true);
     setTimeout(() => {
       loginAccount(loginEmail, loginPassword);
-    }, 2000);
+    }, 1000);
     setLoginEmail("");
     setLoginPassword("");
   };
