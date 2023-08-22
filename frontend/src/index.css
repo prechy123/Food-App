@@ -329,22 +329,6 @@ nav .menu span {
     border-radius: 10px;
 }
 
-footer {
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    background-color: var(--color1);
-    /* background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); */
-}
-footer .img {
-    width: 15%;
-    display: flex;
-    justify-content: space-between;
-}
-
-
 #account-page {
     width: 100vw;
     width: 100dvw;
@@ -478,3 +462,19 @@ footer .img {
 #account-page > div .login-signup .inputbox input:valid {
     border: 2px solid var(--color3);
 }
+
+footer {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: var(--color1);
+    /* background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); */
+}
+footer .img {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+

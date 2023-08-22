@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import router from "./routes/userRoutes.mjs";
 import cors from "cors";
+import cookieParser from "cookie-parser"
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(
     credentials: true
   })
 );
+app.use(cookieParser())
 
 app.use(express.json());
 

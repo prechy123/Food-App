@@ -20,7 +20,8 @@ export const signupAccount = async (req, res) => {
         const existingUser = await User.findOne({ email: email });
         const token = jwt.sign(
           { userId: existingUser._id },
-          process.env.MY_SECRET
+          process.env.MY_SECRET,
+          { expiresIn: "1h" }
         );
         return res
           .status(200)
@@ -47,8 +48,10 @@ export const loginAccount = async (req, res) => {
       if (checkPassword) {
         const token = jwt.sign(
           { userId: existingUser._id },
-          process.env.MY_SECRET
+          process.env.MY_SECRET,
+          { expiresIn: "1h" }
         );
+        res.set("Set-Cookie", "token=" + token);
         return res
           .status(200)
           .json({ message: "account successfully logged in", token: token });
@@ -80,12 +83,12 @@ export const getFoods = async (req, res) => {
   });
 };
 export const addFood = (req, res) => {
+  console.log(req.user)
   res.status(200).json({ food: "added" });
 };
 
 export const logOut = (req, res) => {
-  const sessionId = req.headers.cookie?.split("=")[1];
-  delete sessions[sessionId];
+  res.clearCookie("token")
   //to clear cookies
   res.set("Set-Cookie", "session=; expires=Thu, 01 Jan 1970 00:00:00 GMT");
   res.send("Logged out successfully.");

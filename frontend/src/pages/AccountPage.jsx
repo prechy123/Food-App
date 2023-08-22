@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LoginSignup from "../components/LoginSignup";
 import FooterLayout from "../layouts/FooterLayout";
 import axios from "axios";
-import Cookie from "js-cookie";
+import Cookies from "js-cookie";
 
 export default function AccountPage() {
   const [login, setLogin] = useState(false);
@@ -33,7 +33,10 @@ export default function AccountPage() {
         { withCredentials: true }
       );
       console.log(response.data.message);
-      Cookie.set("token", response.data.token )
+      Cookies.set("token", response.data.token, {
+        sameSite: "None",
+        secure: true,
+      });
     } catch (error) {
       console.log(error.message);
     }
@@ -51,11 +54,24 @@ export default function AccountPage() {
         { withCredentials: true }
       );
       console.log(response.data.message);
-      Cookie.set("token", response.data.token );
-      // console.log(response.data.token);
+      Cookies.set("token", response.data.token, {
+        sameSite: "None",
+        secure: true,
+      });
+      console.log(response.data.token);
     } catch (error) {
       console.log(error.message);
     }
+  };
+
+  const handleAddClick = async () => {
+    const token = Cookies.get("token");
+
+    const response = await axios.post("http://127.0.0.1:4000/add", {
+      token: token,
+    });
+
+    console.log(response.data);
   };
 
   return (
@@ -82,6 +98,7 @@ export default function AccountPage() {
             />
           </div>
         </div>
+        <button onClick={handleAddClick}>add</button>
       </section>
       <FooterLayout />
     </>
