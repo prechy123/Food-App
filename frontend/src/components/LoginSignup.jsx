@@ -23,14 +23,18 @@ export default function LoginSignup({
     setLoadingState(true);
     setTimeout(() => {
       loginAccount(loginEmail, loginPassword);
-    }, 1000);
+    }, 2000);
     setLoginEmail("");
     setLoginPassword("");
   };
   return (
     <>
       {loadingState ? (
-        "loading..."
+        // "loading..."
+        <div className="loading-state">
+          loading...
+          <span></span>
+        </div>
       ) : (
         <>
           {signup && (

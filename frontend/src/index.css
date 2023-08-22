@@ -494,7 +494,22 @@ nav .menu span {
 #account-page > div .login-signup .inputbox input:valid {
     border: 2px solid var(--color3);
 }
-
+#account-page div .login-signup .loading-state span {
+    height: 10px;
+    width: 80px;
+    display: block;
+    background-color: wheat;
+    position: relative;
+    animation: loading-span 1s ease-out infinite alternate;
+}
+@keyframes loading-span {
+    from {
+        width: 80px;
+    }
+    to {
+        width: 200px;
+    }
+}
 
 footer {
     width: auto;
