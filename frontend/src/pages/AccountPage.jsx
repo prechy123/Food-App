@@ -3,6 +3,7 @@ import LoginSignup from "../components/LoginSignup";
 import FooterLayout from "../layouts/FooterLayout";
 import axios from "axios";
 import Cookies from "js-cookie";
+import expirationTime from "../calculate/expirationTime";
 
 export default function AccountPage() {
   const [login, setLogin] = useState(false);
@@ -34,6 +35,7 @@ export default function AccountPage() {
       );
       console.log(response.data.message);
       Cookies.set("token", response.data.token, {
+        expires: expirationTime,
         sameSite: "None",
         secure: true,
       });
@@ -55,6 +57,7 @@ export default function AccountPage() {
       );
       console.log(response.data.message);
       Cookies.set("token", response.data.token, {
+        expires: expirationTime,
         sameSite: "None",
         secure: true,
       });
