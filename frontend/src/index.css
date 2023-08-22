@@ -250,6 +250,10 @@ nav .menu span {
     overflow-y: scroll;
     padding: 20px;
 }
+#search-page .component a{
+    text-decoration: none;
+    color: white;
+}
 #search-page .component:hover >*:not(:hover) {
     transition: filter 5s ease-in-out;
     filter: grayscale(100%);
