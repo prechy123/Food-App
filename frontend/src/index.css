@@ -328,7 +328,37 @@ nav .menu span {
 #product-page .product-component img {
     border-radius: 10px;
 }
+#product-page .product-component .save-food {
+    position: relative;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid var(--color3);
+    transition: 1500ms;
+}
+#product-page .product-component span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background-color: #3a1a1a;
+    transition: 1500ms;
+    z-index: -1;
+}
+#product-page .product-component .save-food:hover{
+    border: 2px solid white;
+    color: var(--color1);
+    border-radius: 5px;
+}
+#product-page .product-component .save-food:hover span{
+    height: 100%;
+}
 
+/*End Product section*/
 #account-page {
     width: 100vw;
     width: 100dvw;
@@ -380,11 +410,9 @@ nav .menu span {
 }
 #account-page > div .title button span{
     background-color: #3a1a1a;
-    border-radius: 15px;
     position: absolute;
     top: 0;
-    left: 0;
-    right: 100%;
+    right: 0;
     height: 100%;
     width: 0;
     z-index: -1;
