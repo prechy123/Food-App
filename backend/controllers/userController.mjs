@@ -82,13 +82,23 @@ export const getFoods = async (req, res) => {
     food: user.food,
   });
 };
-export const addFood = (req, res) => {
-  console.log(req.user)
-  res.status(200).json({ food: "added" });
+export const addFood = async (req, res) => {
+  const { mealId } = req.body;
+  const { userId } = req.user;
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { $push: { food: mealId } },
+      { new: true }
+    );
+    res.status(200).json({ food: "added", user: updatedUser });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
 
 export const logOut = (req, res) => {
-  res.clearCookie("token")
+  res.clearCookie("token");
   //to clear cookies
   res.set("Set-Cookie", "session=; expires=Thu, 01 Jan 1970 00:00:00 GMT");
   res.send("Logged out successfully.");

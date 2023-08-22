@@ -35,7 +35,7 @@ export default function AccountPage() {
       );
       console.log(response.data.message);
       Cookies.set("token", response.data.token, {
-        expires: expirationTime,
+        expires: expirationTime(),
         sameSite: "None",
         secure: true,
       });
@@ -57,7 +57,7 @@ export default function AccountPage() {
       );
       console.log(response.data.message);
       Cookies.set("token", response.data.token, {
-        expires: expirationTime,
+        expires: expirationTime(),
         sameSite: "None",
         secure: true,
       });
