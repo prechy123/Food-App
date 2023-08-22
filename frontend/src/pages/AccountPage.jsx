@@ -67,15 +67,7 @@ export default function AccountPage() {
     }
   };
 
-  const handleAddClick = async () => {
-    const token = Cookies.get("token");
 
-    const response = await axios.post("http://127.0.0.1:4000/add", {
-      token: token,
-    });
-
-    console.log(response.data);
-  };
 
   return (
     <>
@@ -101,7 +93,6 @@ export default function AccountPage() {
             />
           </div>
         </div>
-        <button onClick={handleAddClick}>add</button>
       </section>
       <FooterLayout />
     </>
