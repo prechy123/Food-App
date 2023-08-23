@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function CategoryContentPage() {
+    const [theCategory, setTheCategory] = useState([])
     
   return (
+    <>
     <div className="component">
-      {theCateory ? (
+      {theCategory ? (
         theCategory.meals ? (
           theCategory.meals.map((meal) => {
             return <MealCom meal={meal} key={meal.idMeal} />;
@@ -16,5 +18,6 @@ export default function CategoryContentPage() {
         ""
       )}
     </div>
+    </>
   );
 }
