@@ -320,6 +320,47 @@ nav .menu span {
     padding: 10px;
     color: var(--color1);
 }
+/*Start category-content-component section*/
+#category-content{
+    width: 100vw;
+    width: 100dvw;
+    height: calc(100vh - 124px);
+    height: calc(100dvh - 124px);
+    padding: 20px;
+    overflow-y: scroll;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    display: grid;
+    place-items: center;
+}
+#category-content a{
+    text-decoration: none;
+    color: white;
+}
+#category-content .content-img-d{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+#category-content .even-layout{
+    grid-template-areas: "img text";
+}
+#category-content .old-layout{
+    grid-template-areas: "text img";
+}
+#category-content .content-img-d .content-img {
+    grid-area: img;
+    margin-right: 20px;
+}
+#category-content .content-img-d .content-text{
+    grid-area: text;
+    margin: 0;
+}
+#category-content .content-img-d .content-text h2 {
+    max-width: 20ch;
+}
+/*End category-content-component section*/
 /*End categories section*/
 /*Start Product section*/
 #product-page {
