@@ -316,7 +316,7 @@ nav .menu span {
 }
 #categories-page div .category-component div:last-child p{
     background-color: var(--color3);
-    border-radius: 0 10px 0 10px;
+    border-radius: 0 10px 10px 10px;
     padding: 10px;
     color: var(--color1);
 }
