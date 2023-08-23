@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import CategoryContentCom from "../components/CategoryContentCom";
 
 export default function CategoryContentPage() {
   const [theCategories, setTheCategories] = useState([]);
@@ -21,18 +22,10 @@ export default function CategoryContentPage() {
         <div className="component">
           {/* <a href={url}> */}
           {theCategories.map((theCategory) => (
-            <div className="search-component">
-              <div className="search-img-d">
-                <div className="search-img">
-                  <img
-                    src={theCategory.strMealThumb}
-                    alt={theCategory.strMeal}
-                    width={100}
-                  />
-                </div>
-                <h2>{theCategory.strMeal}</h2>
-              </div>
-            </div>
+            <CategoryContentCom
+              theCategory={theCategory}
+              key={theCategory.idMeal}
+            />
           ))}
           {/* </a> */}
         </div>
