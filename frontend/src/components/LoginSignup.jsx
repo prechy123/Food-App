@@ -21,9 +21,7 @@ export default function LoginSignup({
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     setLoadingState(true);
-    setTimeout(() => {
-      loginAccount(loginEmail, loginPassword);
-    }, 1000);
+    loginAccount(loginEmail, loginPassword);
     setLoginEmail("");
     setLoginPassword("");
   };
