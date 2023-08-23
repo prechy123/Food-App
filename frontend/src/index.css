@@ -297,6 +297,9 @@ nav .menu span {
     gap: 30px;
 
 }
+#categories-page div a {
+    text-decoration: none;
+}
 #categories-page div .category-component {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -306,6 +309,10 @@ nav .menu span {
 }
 #categories-page div .category-component div .theImg {
     border-radius: 10px;
+    transition: scale 1s ease;
+}
+#categories-page div .category-component div .theImg:hover {
+    scale: 1.4;
 }
 #categories-page div .category-component div:last-child p{
     background-color: var(--color3);

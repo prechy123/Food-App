@@ -11,7 +11,6 @@ export default function CategoryContentPage() {
       const response = await axios(
         "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + cateName
       );
-      console.log(response.data.meals);
       setTheCategories(response.data.meals);
     };
     fetchCategories();
@@ -20,14 +19,12 @@ export default function CategoryContentPage() {
     <>
       {theCategories && (
         <div className="component">
-          {/* <a href={url}> */}
           {theCategories.map((theCategory) => (
             <CategoryContentCom
               theCategory={theCategory}
               key={theCategory.idMeal}
             />
           ))}
-          {/* </a> */}
         </div>
       )}
     </>
