@@ -418,6 +418,21 @@ nav .menu span {
 #product-page .product-component .save-food:hover span{
     height: 100%;
 }
+#product-page span {
+    height: 10px;
+    width: 80px;
+    display: block;
+    background-color: var(--color3);
+    animation: loading-span 1s ease-out infinite alternate;
+}
+@keyframes loading-span {
+    from {
+        width: 80px;
+    }
+    to {
+        width: 200px;
+    }
+}
 
 /*End Product section*/
 #account-page {
@@ -556,7 +571,6 @@ nav .menu span {
     width: 80px;
     display: block;
     background-color: var(--color1);
-    position: relative;
     animation: loading-span 1s ease-out infinite alternate;
 }
 @keyframes loading-span {

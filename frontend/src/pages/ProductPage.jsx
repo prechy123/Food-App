@@ -22,7 +22,10 @@ export default function ProductPage() {
         {meal.length > 0 ? (
           <ProductComponent meal={meal[0]} />
         ) : (
+          <>
           <h1>Loading....</h1>
+          <span></span>
+          </>
         )}
       </section>
       <FooterLayout />
