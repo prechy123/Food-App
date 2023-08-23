@@ -74,6 +74,24 @@ export default function AccountPage() {
     }
   };
 
+  useState(() => {
+    const token = Cookies.get("token");
+    if (token) {
+      const tokenData = JSON.parse(atob(token.split(".")[1]));
+      const expirationTime = tokenData.exp * 1000;
+      if (expirationTime > Date.now()) {
+        console.log("Token is still valid");
+        setIsAuthenticated(true);
+      } else {
+        console.log("Token has expired");
+        setIsAuthenticated(false);
+      }
+    } else {
+      console.log("Token not found");
+      setIsAuthenticated(false);
+    }
+  }, []);
+
   return (
     <>
       <section id="account-page">

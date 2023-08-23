@@ -21,7 +21,6 @@ nav {
     justify-content: space-between;
     padding: 10px;
     background-color: var(--color1);
-    /* background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); */
 }
 nav ul li{
     padding-top: 10px;
@@ -581,7 +580,7 @@ nav .menu span {
         width: 200px;
     }
 }
-
+/*Start footer*/
 footer {
     width: auto;
     height: auto;
@@ -589,11 +588,10 @@ footer {
     justify-content: space-between;
     padding: 12px;
     background-color: var(--color1);
-    /* background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); */
 }
 footer .img {
     width: 15%;
     display: flex;
     justify-content: space-between;
 }
-
+/*End footer*/
