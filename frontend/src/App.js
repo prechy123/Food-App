@@ -25,7 +25,7 @@ function App() {
         <Route path="product/:id" element={<ProductPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="account" element={<AccountPage />} />
-        <Route path="categories/:id" element={<CategoryContentPage />} />
+        <Route path="categories/:cateName" element={<CategoryContentPage />} />
       </Route>
     )
   );

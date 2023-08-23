@@ -8,7 +8,6 @@ import FooterLayout from "../layouts/FooterLayout";
 export default function SearchPage() {
   const [food, setFood] = useState("");
   const [theMeals, setMeals] = useState();
-  console.log(theMeals);
 
   useEffect(() => {
     const fetchFood = async () => {
