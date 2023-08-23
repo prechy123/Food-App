@@ -10,7 +10,7 @@ export default function CategoryContentCom({ theCategory, index }) {
           <img
             src={theCategory.strMealThumb}
             alt={theCategory.strMeal}
-            width={500}
+            width={400}
           />
         </div>
         <div className="content-text">

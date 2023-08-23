@@ -342,6 +342,10 @@ nav .menu span {
     align-items: center;
     margin-bottom: 20px;
     gap: 20px;
+    transition: filter 200ms ease;
+}
+#category-content .content-img-d:not(:hover){
+    filter: grayscale(20%);
 }
 #category-content .even-layout{
     grid-template-areas: "img text";
@@ -352,6 +356,10 @@ nav .menu span {
 #category-content .content-img-d .content-img {
     grid-area: img;
     margin-right: 20px;
+    border-radius: 20px;
+}
+#category-content .content-img-d .content-img img{
+    border-radius: 20px;
 }
 #category-content .content-img-d .content-text{
     grid-area: text;
@@ -360,6 +368,7 @@ nav .menu span {
 #category-content .content-img-d .content-text h2 {
     max-width: 20ch;
 }
+
 /*End category-content-component section*/
 /*End categories section*/
 /*Start Product section*/
