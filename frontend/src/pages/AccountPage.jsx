@@ -10,7 +10,7 @@ export default function AccountPage() {
   const [login, setLogin] = useState(false);
   const [signup, setSignup] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [tokenData, setTokenData] = useState("")
+  const [tokenData, setTokenData] = useState("");
   const handleLogin = () => {
     setLogin(!login);
     if (signup) {
@@ -35,6 +35,9 @@ export default function AccountPage() {
         { withCredentials: true }
       );
       console.log(response.data.message);
+      if (response.data.token === undefined) {
+        return console.log("Undefined");
+      }
       Cookies.set("token", response.data.token, {
         expires: expirationTime(),
         sameSite: "None",
@@ -42,7 +45,7 @@ export default function AccountPage() {
       });
       if (Cookies.get("token") === response.data.token) {
         setIsAuthenticated(true);
-        setTokenData(response.data.token)
+        setTokenData(response.data.token);
       }
     } catch (error) {
       console.log(error.message);
@@ -61,15 +64,18 @@ export default function AccountPage() {
         { withCredentials: true }
       );
       console.log(response.data.message);
+      if (response.data.token === undefined) {
+        return console.log("Undefined");
+      }
       Cookies.set("token", response.data.token, {
         expires: expirationTime(),
         sameSite: "None",
         secure: true,
       });
-      
+
       if (Cookies.get("token") === response.data.token) {
         setIsAuthenticated(true);
-        setTokenData(response.data.token)
+        setTokenData(response.data.token);
       }
     } catch (error) {
       console.log(error.message);
@@ -85,7 +91,7 @@ export default function AccountPage() {
       if (expirationTime > Date.now()) {
         console.log("Token is still valid");
         setIsAuthenticated(true);
-        setTokenData(token)
+        setTokenData(token);
       } else {
         console.log("Token has expired");
         setIsAuthenticated(false);
@@ -98,34 +104,36 @@ export default function AccountPage() {
 
   return (
     <>
-      <section id="account-page">
-        {isAuthenticated ? (
-          <SaveAccountCom tokenData={tokenData}/>
-        ) : (
-          <div>
-            <div className="title">
-              <h1>Already have an account </h1>
-              <div>
-                <button onClick={handleLogin}>
-                  <span></span>login
-                </button>
-                <button onClick={handleSignup}>
-                  <span></span>Signup
-                </button>
+      {isAuthenticated ? (
+        <SaveAccountCom tokenData={tokenData} />
+      ) : (
+        <>
+          <section id="account-page">
+            <div>
+              <div className="title">
+                <h1>Already have an account </h1>
+                <div>
+                  <button onClick={handleLogin}>
+                    <span className="first"></span>login
+                  </button>
+                  <button onClick={handleSignup}>
+                    <span className="second"></span>Signup
+                  </button>
+                </div>
+              </div>
+              <div className="login-signup">
+                <LoginSignup
+                  login={login}
+                  signup={signup}
+                  createAccount={createAccount}
+                  loginAccount={loginAccount}
+                />
               </div>
             </div>
-            <div className="login-signup">
-              <LoginSignup
-                login={login}
-                signup={signup}
-                createAccount={createAccount}
-                loginAccount={loginAccount}
-              />
-            </div>
-          </div>
-        )}
-      </section>
-      <FooterLayout />
+          </section>
+          <FooterLayout />
+        </>
+      )}
     </>
   );
 }

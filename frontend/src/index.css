@@ -502,11 +502,21 @@ nav .menu span {
     overflow: hidden;
     transition: 2000ms;
 }
-#account-page > div .title button span{
+#account-page > div .title button .first{
     background-color: #3a1a1a;
     position: absolute;
     top: 0;
     right: 0;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    transition: 1500ms;
+}
+#account-page > div .title button .second{
+    background-color: #3a1a1a;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 0;
     z-index: -1;
