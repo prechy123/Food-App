@@ -433,8 +433,14 @@ nav .menu span {
         width: 200px;
     }
 }
+#product-page .product-component div .success{
+    border: 2px solid rgb(12, 255, 12);
+    background-color: rgb(67, 161, 67);
+    padding: 10px;
+    color: white;
+    pointer-events: none;
+}
 #product-page .product-component div .error{
-    display: block;
     border: 2px solid rgb(252, 0, 0);
     background-color: rgb(196, 83, 83);
     padding: 10px;
