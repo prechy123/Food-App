@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import FoodCom from "./FoodCom";
+import {v4 as uuid} from "uuid"
 
 export default function SaveAccountCom({ tokenData }) {
   const [foods, setFoods] = useState([]);
@@ -16,10 +18,11 @@ export default function SaveAccountCom({ tokenData }) {
     };
     foods();
   }, [userId]);
-  console.log(foods)
   return (
     <div className="saved-content">
-      {foods.length > 0 && foods.map((food) => <h1>{food}</h1>)}
+      {foods.length > 0 && foods.map((food) => (
+        <FoodCom key={uuid()} food={food}/>
+      ))}
     </div>
   );
 }
