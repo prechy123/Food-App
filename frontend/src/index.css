@@ -622,6 +622,18 @@ nav .menu span {
     background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
     position: relative;
 }
+#saved-content .log-out {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#saved-content .log-out a {
+    text-decoration: none;
+    background-color: rgb(197, 88, 88);
+    border: 2px solid rgb(255, 1, 1);
+    padding: 10px;
+    color: white;
+}
 #saved-content .content-container{
     width: 100%;
     overflow-y: scroll;
