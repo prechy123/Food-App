@@ -71,8 +71,6 @@ export default function AccountPage() {
         setIsAuthenticated(true);
         setTokenData(response.data.token)
       }
-
-      console.log(response.data.token);
     } catch (error) {
       console.log(error.message);
     }
