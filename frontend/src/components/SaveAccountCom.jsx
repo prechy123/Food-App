@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function SaveAccountCom({ tokenData }) {
+  const [foods, setFoods] = useState([]);
   const tokenObject = JSON.parse(atob(tokenData.split(".")[1]));
   const { userId } = tokenObject;
   useEffect(() => {
@@ -9,11 +10,16 @@ export default function SaveAccountCom({ tokenData }) {
       const response = await axios("http://127.0.0.1:4000/getFoods", {
         params: {
           userId: userId,
-        }
+        },
       });
-      console.log(response.data.foods);
+      setFoods(response.data.foods);
     };
     foods();
   }, [userId]);
-  return <div>SaveAccountCom</div>;
+  console.log(foods)
+  return (
+    <div className="saved-content">
+      {foods.length > 0 && foods.map((food) => <h1>{food}</h1>)}
+    </div>
+  );
 }
