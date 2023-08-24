@@ -18,6 +18,7 @@ export default function SaveAccountCom({ tokenData }) {
     };
     foods();
   }, [userId]);
+  console.log(foods)
   return (
     <div className="saved-content">
       {foods.length > 0 && foods.map((food) => (

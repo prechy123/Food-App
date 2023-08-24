@@ -599,9 +599,9 @@ nav .menu span {
         width: 200px;
     }
 }
-/* #saved-content {
-
-} */
+.saved-content {
+    overflow-y: scroll;
+}
 /*Start footer*/
 footer {
     width: auto;
