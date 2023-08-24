@@ -13,7 +13,7 @@ const router = express.Router();
 router.post("/signupAccount", signupAccount);
 router.post("/loginAccount", loginAccount);
 router.post("/add", cookieJwtAuth, addFood);
-router.get("/getFoods", getFoods);
+router.get("/getFoods", getFoods)
 router.post("/logOut", logOut);
 
 export default router;

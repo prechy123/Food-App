@@ -67,21 +67,20 @@ export const loginAccount = async (req, res) => {
 };
 
 export const getFoods = async (req, res) => {
-  //using chaining operator (?.) incase req.header.cookir returns null or undefined
-  const sessionId = req.headers.cookie?.split("=")[1];
-  const userSession = sessions[sessionId];
-  if (!userSession) {
-    return res.json({ message: "Invalid session" });
+  const { userId } = req.query;
+  try {
+    const user = await User.findOne({ _id: userId });
+    if (user) {
+      const foods = user.food;
+      res.status(200).json({ foods });
+    } else {
+      res.status(400).json({ message: "No food found" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error });
   }
-  const { userId, email } = userSession;
-  const user = await User.findOne({ _id: userId });
-  res.send({
-    title: "So its working hahaha",
-    email,
-    userId,
-    food: user.food,
-  });
 };
+
 export const addFood = async (req, res) => {
   const { mealId } = req.body;
   const { userId } = req.user;

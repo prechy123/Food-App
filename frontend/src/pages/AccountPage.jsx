@@ -10,6 +10,7 @@ export default function AccountPage() {
   const [login, setLogin] = useState(false);
   const [signup, setSignup] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [tokenData, setTokenData] = useState("")
   const handleLogin = () => {
     setLogin(!login);
     if (signup) {
@@ -41,6 +42,7 @@ export default function AccountPage() {
       });
       if (Cookies.get("token") === response.data.token) {
         setIsAuthenticated(true);
+        setTokenData(response.data.token)
       }
     } catch (error) {
       console.log(error.message);
@@ -64,8 +66,10 @@ export default function AccountPage() {
         sameSite: "None",
         secure: true,
       });
+      
       if (Cookies.get("token") === response.data.token) {
         setIsAuthenticated(true);
+        setTokenData(response.data.token)
       }
 
       console.log(response.data.token);
@@ -83,6 +87,7 @@ export default function AccountPage() {
       if (expirationTime > Date.now()) {
         console.log("Token is still valid");
         setIsAuthenticated(true);
+        setTokenData(token)
       } else {
         console.log("Token has expired");
         setIsAuthenticated(false);
@@ -97,7 +102,7 @@ export default function AccountPage() {
     <>
       <section id="account-page">
         {isAuthenticated ? (
-          <SaveAccountCom />
+          <SaveAccountCom tokenData={tokenData}/>
         ) : (
           <div>
             <div className="title">
