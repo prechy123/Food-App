@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import FoodCom from "./FoodCom";
-import {v4 as uuid} from "uuid"
+import { v4 as uuid } from "uuid";
+import Cookies from "js-cookie";
 
 export default function SaveAccountCom({ tokenData }) {
   const [foods, setFoods] = useState([]);
@@ -18,12 +19,18 @@ export default function SaveAccountCom({ tokenData }) {
     };
     foods();
   }, [userId]);
-  console.log(foods)
+  console.log(foods);
+  const handleOnClick = async () => {
+    Cookies.remove("token");
+    
+  };
   return (
-    <div className="saved-content">
-      {foods.length > 0 && foods.map((food) => (
-        <FoodCom key={uuid()} food={food}/>
-      ))}
-    </div>
+    <>
+      <div className="saved-content">
+        {foods.length > 0 &&
+          foods.map((food) => <FoodCom key={uuid()} food={food} />)}
+      </div>
+      <a href="http://localhost:3000/account" onClick={handleOnClick}>Log-Out</a>
+    </>
   );
 }

@@ -95,10 +95,3 @@ export const addFood = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
-export const logOut = (req, res) => {
-  res.clearCookie("token");
-  //to clear cookies
-  res.set("Set-Cookie", "session=; expires=Thu, 01 Jan 1970 00:00:00 GMT");
-  res.send("Logged out successfully.");
-};
