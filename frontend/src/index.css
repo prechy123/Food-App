@@ -609,8 +609,16 @@ nav .menu span {
         width: 200px;
     }
 }
-.saved-content {
-    overflow-y: scroll;
+/*End acout page*/
+
+/*Start saved account content page*/
+#saved-content {
+    width: 100vw;
+    width: 100dvw;
+    height: calc(100vh - 124px);
+    height: calc(100dvh - 124px);
+    padding: 20px;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 /*Start footer*/
 footer {

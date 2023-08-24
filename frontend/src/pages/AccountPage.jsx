@@ -4,7 +4,7 @@ import FooterLayout from "../layouts/FooterLayout";
 import axios from "axios";
 import Cookies from "js-cookie";
 import expirationTime from "../calculate/expirationTime";
-import SaveAccountCom from "../components/SaveAccountCom";
+import SaveAccountCom from "./SaveAccountContent";
 
 export default function AccountPage() {
   const [login, setLogin] = useState(false);
