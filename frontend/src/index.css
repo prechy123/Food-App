@@ -618,8 +618,45 @@ nav .menu span {
     height: calc(100vh - 124px);
     height: calc(100dvh - 124px);
     padding: 20px;
+    overflow-y: scroll;
     background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    position: relative;
 }
+#saved-content .content-container{
+    width: 100%;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+#saved-content .content-container a{
+    text-decoration: none;
+}
+#saved-content .content-container .content-container-child{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+#saved-content .content-container .content-container-child h1 {
+    background-color: var(--color3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+#saved-content .content-container .content-container-child p {
+    color: black;
+}
+#saved-content .content-container .content-container-child .img{
+    width: 80px;
+    height: 80px;
+    background-color: var(--color1);
+}
+#saved-content .content-container .content-container-child img {
+    border-radius: 20px;
+    width: 80px;
+}
+
+/*End saved account content page*/
 /*Start footer*/
 footer {
     width: auto;

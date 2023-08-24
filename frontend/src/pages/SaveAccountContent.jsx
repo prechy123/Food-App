@@ -31,9 +31,11 @@ export default function SaveAccountCom({ tokenData }) {
           {foods.length > 0 &&
             foods.map((foodId) => <FoodCom key={uuid()} foodId={foodId} />)}
         </div>
+        <div className="log-out">
         <a href="http://localhost:3000/account" onClick={handleOnClick}>
           Log-Out
         </a>
+        </div>
       </section>
       <FooterLayout />
     </>
