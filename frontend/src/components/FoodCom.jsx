@@ -14,12 +14,19 @@ export default function FoodCom({ foodId }) {
   }, []);
   console.log(food);
   return (
+    <>
     <a href={`/product/${food.idMeal}`}>
     <div className="content-container-child">
-      <h1>{food.strMeal}</h1>
+    <div className="img">
+        <img src={food.strMealThumb} alt={food.strMeal} />
+      </div>
       <p>{food.strCategory}</p>
-      <div className="img"><img src={food.strMealThumb} alt={food.strMeal} /></div>
+      <h1>{food.strMeal}</h1>
+
+    <button><span></span>Delete</button>
+
     </div>
     </a>
+    </>
   );
 }

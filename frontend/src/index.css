@@ -629,10 +629,24 @@ nav .menu span {
 }
 #saved-content .log-out a {
     text-decoration: none;
-    background-color: rgb(197, 88, 88);
-    border: 2px solid rgb(255, 1, 1);
+    background-color: transparent;
+    border: 1px solid red;
     padding: 10px;
-    color: white;
+    color: black;
+    position: relative;
+}
+#saved-content .log-out a span {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgb(190, 94, 94);
+    transition: height 1s ease;
+}
+#saved-content .log-out a:hover span{
+    height: 100%;
 }
 #saved-content .content-container{
     width: 100%;
@@ -646,7 +660,7 @@ nav .menu span {
 }
 #saved-content .content-container .content-container-child{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 10px;
 }
 #saved-content .content-container .content-container-child h1 {
@@ -659,15 +673,40 @@ nav .menu span {
     color: black;
 }
 #saved-content .content-container .content-container-child .img{
-    width: 80px;
+    width: 100%;
     height: 80px;
-    background-color: var(--color1);
+    /* background-color: var(--color1); */
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
 }
 #saved-content .content-container .content-container-child img {
     border-radius: 20px;
     width: 80px;
 }
-
+#saved-content .content-container .content-container-child button {
+    width: 90px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid red;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+#saved-content .content-container .content-container-child button span {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgb(190, 94, 94);
+    transition: height 1s ease;
+}
+#saved-content .content-container .content-container-child button:hover span{
+    height: 100%;
+}
 /*End saved account content page*/
 /*Start footer*/
 footer {
