@@ -384,6 +384,7 @@ nav .menu span {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
+    gap: 20px;
 }
 #product-page .product-component img {
     border-radius: 10px;
@@ -431,6 +432,18 @@ nav .menu span {
     to {
         width: 200px;
     }
+}
+#product-page .product-component div .error{
+    display: block;
+    border: 2px solid rgb(252, 0, 0);
+    background-color: rgb(196, 83, 83);
+    padding: 10px;
+    color: white;
+    pointer-events: none;
+}
+#product-page .product-component div .error a{
+    pointer-events: all;
+    color: black;
 }
 
 /*End Product section*/

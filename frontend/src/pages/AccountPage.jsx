@@ -78,6 +78,7 @@ export default function AccountPage() {
     const token = Cookies.get("token");
     if (token) {
       const tokenData = JSON.parse(atob(token.split(".")[1]));
+      //atob is a built-in javascipt used to decodes a base64-encoded string
       const expirationTime = tokenData.exp * 1000;
       if (expirationTime > Date.now()) {
         console.log("Token is still valid");

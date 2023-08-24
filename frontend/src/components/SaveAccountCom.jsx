@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { useState } from "react";
 
 export default function SaveAccountCom() {
-  return (
-    <div>SaveAccountCom</div>
-  )
+  return <div>SaveAccountCom</div>;
 }
