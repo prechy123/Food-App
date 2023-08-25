@@ -10,7 +10,17 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    food: [{ type: String }],
+    food: [
+      {
+        stringValue: {
+          type: String,
+        },
+        timeStampValue: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
