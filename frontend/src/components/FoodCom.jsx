@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { formatDistanceToNow } from 'date-fns'
 
-export default function FoodCom({ foodId }) {
+export default function FoodCom({ foodId, time }) {
   const [food, setFood] = useState([]);
   useState(() => {
     const fetchFood = async () => {
@@ -22,6 +23,7 @@ export default function FoodCom({ foodId }) {
       </div>
       <p>{food.strCategory}</p>
       <h1>{food.strMeal}</h1>
+      <p>{formatDistanceToNow(new Date(time), {addSuffix: true})}</p>
 
     <button><span></span>Delete</button>
 

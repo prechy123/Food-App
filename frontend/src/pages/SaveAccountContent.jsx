@@ -29,13 +29,19 @@ export default function SaveAccountCom({ tokenData }) {
       <section id="saved-content">
         <div className="content-container">
           {foods.length > 0 &&
-            foods.map((foodId) => <FoodCom key={uuid()} foodId={foodId} />)}
+            foods.map((food) => (
+              <FoodCom
+                key={uuid()}
+                foodId={food.stringValue}
+                time={food.timeStampValue}
+              />
+            ))}
         </div>
         <div className="log-out">
-        <a href="http://localhost:3000/account" onClick={handleOnClick}>
-          <span></span>
-          Log-Out
-        </a>
+          <a href="http://localhost:3000/account" onClick={handleOnClick}>
+            <span></span>
+            Log-Out
+          </a>
         </div>
       </section>
       <FooterLayout />
