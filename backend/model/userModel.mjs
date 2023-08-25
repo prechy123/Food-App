@@ -13,12 +13,13 @@ const userSchema = mongoose.Schema(
     food: [
       {
         stringValue: {
-          type: String,
+          type: Number,
         },
         timeStampValue: {
           type: Date,
           default: Date.now,
         },
+        _id: false
       },
     ],
   },

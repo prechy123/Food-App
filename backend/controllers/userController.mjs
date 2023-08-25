@@ -87,7 +87,7 @@ export const addFood = async (req, res) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(
       userId,
-      { $push: { food: mealId } },
+      { $push: { food: { stringValue: mealId } } },
       { new: true }
     );
     res.status(200).json({ food: "added", user: updatedUser });
