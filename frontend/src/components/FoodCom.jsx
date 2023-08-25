@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { formatDistanceToNow } from 'date-fns'
+import { formatDistanceToNow } from "date-fns";
+import Cookies from "js-cookie";
 
 export default function FoodCom({ foodId, time }) {
   const [food, setFood] = useState([]);
@@ -13,22 +14,31 @@ export default function FoodCom({ foodId, time }) {
     };
     fetchFood();
   }, []);
-  console.log(food);
+
+  const handleOnClickDelete = async (e) => {
+    const token = Cookies.get("token");
+    const userId = JSON.parse(atob(token.split(".")[1])).userId;
+    const selectedFoodId = e.target.value;
+    await axios.post("http://127.0.0.1:4000/delete", {
+      selectedFoodId,
+      userId
+    });
+  };
   return (
     <>
-    <a href={`/product/${food.idMeal}`}>
-    <div className="content-container-child">
-    <div className="img">
-        <img src={food.strMealThumb} alt={food.strMeal} />
+      <div className="content-container-child">
+        <a href={`/product/${food.idMeal}`}>
+          <div className="img">
+            <img src={food.strMealThumb} alt={food.strMeal} />
+          </div>
+          <p>{food.strCategory}</p>
+          <h1>{food.strMeal}</h1>
+          <p>{formatDistanceToNow(new Date(time), { addSuffix: true })}</p>
+        </a>
+        <button onClick={handleOnClickDelete} value={foodId}>
+          <span></span>Delete
+        </button>
       </div>
-      <p>{food.strCategory}</p>
-      <h1>{food.strMeal}</h1>
-      <p>{formatDistanceToNow(new Date(time), {addSuffix: true})}</p>
-
-    <button><span></span>Delete</button>
-
-    </div>
-    </a>
     </>
   );
 }

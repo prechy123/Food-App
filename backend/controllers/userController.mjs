@@ -95,3 +95,17 @@ export const addFood = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const deleteFood = async (req, res) => {
+  const { selectedFoodId, userId } = req.body;
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { $pull: { food: { stringValue: selectedFoodId } } },
+      { new: true }
+    );
+    res.status(200).json({ message: updatedUser });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
