@@ -21,8 +21,16 @@ export default function SaveAccountCom({ tokenData }) {
     foods();
   }, [userId]);
   console.log(foods);
-  const handleOnClick = async () => {
+  const handleOnClick = () => {
     Cookies.remove("token");
+  };
+  const deleteFood = (selectedFoodId) => {
+    selectedFoodId = parseInt(selectedFoodId);
+
+    const filteredFood = foods.filter((food) => {
+      return food.stringValue !== selectedFoodId;
+    });
+    setFoods(filteredFood);
   };
   return (
     <>
@@ -34,6 +42,7 @@ export default function SaveAccountCom({ tokenData }) {
                 key={uuid()}
                 foodId={food.stringValue}
                 time={food.timeStampValue}
+                deleteFood={deleteFood}
               />
             ))}
         </div>

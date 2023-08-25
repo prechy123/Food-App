@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import Cookies from "js-cookie";
 
-export default function FoodCom({ foodId, time }) {
+export default function FoodCom({ foodId, time, deleteFood }) {
   const [food, setFood] = useState([]);
   useState(() => {
     const fetchFood = async () => {
@@ -21,8 +21,9 @@ export default function FoodCom({ foodId, time }) {
     const selectedFoodId = e.target.value;
     await axios.post("http://127.0.0.1:4000/delete", {
       selectedFoodId,
-      userId
+      userId,
     });
+    deleteFood(selectedFoodId)
   };
   return (
     <>
