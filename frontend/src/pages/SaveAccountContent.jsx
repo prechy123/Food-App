@@ -21,7 +21,7 @@ export default function SaveAccountCom({ tokenData }) {
     foods();
   }, [userId]);
   console.log(foods);
-  const handleOnClick = () => {
+  const handleOnClickLogOut = () => {
     Cookies.remove("token");
   };
   const deleteFood = (selectedFoodId) => {
@@ -47,7 +47,7 @@ export default function SaveAccountCom({ tokenData }) {
             ))}
         </div>
         <div className="log-out">
-          <a href="http://localhost:3000/account" onClick={handleOnClick}>
+          <a href="http://localhost:3000/account" onClick={handleOnClickLogOut}>
             <span></span>
             Log-Out
           </a>
