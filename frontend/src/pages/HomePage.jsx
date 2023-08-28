@@ -1,10 +1,36 @@
 import FooterLayout from "../layouts/FooterLayout";
+import { motion } from "framer-motion";
 
+const sectionVariants = {
+  initial: {
+  },
+  animate: {
+    transition: {
+      staggerChildren: 0.5
+    }
+  },
+};
+const sideVariants = {
+  initial: {
+    x: "100vw"
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 1.3,
+    }
+  }
+}
 export default function HomePage() {
   return (
     <>
-      <section id="home">
-        <div className="l-side">
+      <motion.section
+        id="home"
+        variants={sectionVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <motion.div className="l-side" variants={sideVariants}>
           <h1>
             <span>Welcome to </span>Meal App
           </h1>
@@ -15,8 +41,8 @@ export default function HomePage() {
             accessing a wide array of high-quality recipes, thoughtfully curated
             to represent global flavors and gastronomic delights.
           </p>
-        </div>
-        <div className="r-side">
+        </motion.div>
+        <motion.div className="r-side" variants={sideVariants}>
           <div className="grid-container">
             <div className="grid-item-1"></div>
             <div className="grid-item-2"></div>
@@ -27,8 +53,8 @@ export default function HomePage() {
             <div className="grid-item-7"></div>
             <div className="grid-item-7"></div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
       <FooterLayout />
     </>
   );
