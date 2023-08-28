@@ -249,8 +249,9 @@ nav .icon-logo {
 }
 #search-page .component {
     width: 100%;
+    height: calc(100vh - 240px);
     /* width: 100dvw; */
-    min-height: auto;
+    /* height: auto; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
