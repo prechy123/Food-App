@@ -33,20 +33,20 @@ export default function AccountPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [tokenData, setTokenData] = useState("");
   const [loadingState, setLoadingState] = useState(false);
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
   const handleLogin = () => {
     setLogin(!login);
     if (signup) {
       setSignup(!signup);
     }
-    setMessage("")
+    setMessage("");
   };
   const handleSignup = () => {
     setSignup(!signup);
     if (login) {
       setLogin(!login);
     }
-    setMessage("")
+    setMessage("");
   };
   const createAccount = async (email, password) => {
     const account = {
@@ -60,10 +60,10 @@ export default function AccountPage() {
         { withCredentials: true }
       );
       const message = response.data.message;
-      
-      if(message === "Email exists") {
-        setLoadingState(false)
-        setMessage("Account already exist, Login or Try another email")
+
+      if (message === "Email exists") {
+        setLoadingState(false);
+        setMessage("Account already exist, Login or Try another email");
       }
       if (response.data.token === undefined) {
         return console.log("Undefined");
@@ -93,7 +93,10 @@ export default function AccountPage() {
         account,
         { withCredentials: true }
       );
-      console.log(response.data.message);
+      const message = response.data.message;
+      if (message === "Email does not exist") {
+        setMessage("Email address does not exist... Try another or signup");
+      }
       if (response.data.token === undefined) {
         return console.log("Undefined");
       }
