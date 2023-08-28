@@ -465,6 +465,7 @@ nav .icon-logo {
     padding: 10px;
     color: white;
     pointer-events: none;
+    margin-top: 10px;
 }
 #product-page .product-component div .error{
     border: 2px solid rgb(252, 0, 0);
@@ -472,6 +473,7 @@ nav .icon-logo {
     padding: 10px;
     color: white;
     pointer-events: none;
+    margin-top: 10px;
 }
 #product-page .product-component div .error a{
     pointer-events: all;
