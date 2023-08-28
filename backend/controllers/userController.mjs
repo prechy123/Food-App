@@ -85,6 +85,9 @@ export const addFood = async (req, res) => {
   const { mealId } = req.body;
   const { userId } = req.user;
   try {
+    if (userId === undefined) {
+      return res.json({message: "account not found"})
+    }
     const updatedUser = await User.findByIdAndUpdate(
       userId,
       { $push: { food: { stringValue: mealId } } },

@@ -29,10 +29,14 @@ export default function ProductComponent({ meal }) {
   const handleAddClick = async () => {
     const token = Cookies.get("token");
     try {
-      await axios.post("http://127.0.0.1:4000/add", {
+      const response = await axios.post("http://127.0.0.1:4000/add", {
         token: token,
         mealId: meal.idMeal,
       });
+      const message = response.data.message
+      if (message === "account not found") {
+        return setError(true)
+      }
       setSuccess(true);
     } catch (err) {
       setError(true);
