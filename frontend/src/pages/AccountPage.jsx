@@ -95,8 +95,16 @@ export default function AccountPage() {
       );
       const message = response.data.message;
       if (message === "Email does not exist") {
-        setMessage("Email address does not exist... Try another or signup");
-        setLoadingState(false)
+        setMessage(
+          "Email address does not exist... Try another email address or create a new account"
+        );
+        setLoadingState(false);
+      }
+      if (message === "Incorrect password") {
+        setMessage(
+          "Incorrect password entered... Try another password or Create a new account"
+        );
+        setLoadingState(false);
       }
       if (response.data.token === undefined) {
         return console.log("Undefined");
