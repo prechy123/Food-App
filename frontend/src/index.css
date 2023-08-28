@@ -42,6 +42,14 @@ nav .menu span {
     margin-bottom: 5px;
     background-color: black;
 }
+nav .icon-logo {
+    width: 50px;
+    overflow: visible;
+    stroke: #fff;
+    stroke-width: 4;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
 
 .active {
     background-color: var(--color3);
