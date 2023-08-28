@@ -39,12 +39,14 @@ export default function AccountPage() {
     if (signup) {
       setSignup(!signup);
     }
+    setMessage("")
   };
   const handleSignup = () => {
     setSignup(!signup);
     if (login) {
       setLogin(!login);
     }
+    setMessage("")
   };
   const createAccount = async (email, password) => {
     const account = {
