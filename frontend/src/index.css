@@ -3,6 +3,19 @@
     --color2: #00FFFF;
     --color3: #3a1a1a;
 }
+::-webkit-scrollbar {
+  width: 10px;
+} 
+::-webkit-scrollbar-thumb {
+  background-color: rgba(58, 26, 26, 0.4);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(58, 26, 26, 0.6);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(58, 26, 26, 1);
+}
 
 * {
     padding: 0;
