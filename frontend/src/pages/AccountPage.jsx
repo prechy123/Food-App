@@ -32,6 +32,8 @@ export default function AccountPage() {
   const [signup, setSignup] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [tokenData, setTokenData] = useState("");
+  const [loadingState, setLoadingState] = useState(false);
+  const [message, setMessage] = useState("")
   const handleLogin = () => {
     setLogin(!login);
     if (signup) {
@@ -55,7 +57,12 @@ export default function AccountPage() {
         account,
         { withCredentials: true }
       );
-      console.log(response.data.message);
+      const message = response.data.message;
+      
+      if(message === "Email exists") {
+        setLoadingState(false)
+        setMessage("Account already exist, Login or Try another email")
+      }
       if (response.data.token === undefined) {
         return console.log("Undefined");
       }
@@ -126,7 +133,7 @@ export default function AccountPage() {
   return (
     <>
       {isAuthenticated ? (
-        <SaveAccountCom tokenData={tokenData}/>
+        <SaveAccountCom tokenData={tokenData} />
       ) : (
         <>
           <section id="account-page">
@@ -135,7 +142,11 @@ export default function AccountPage() {
               initial="initial"
               animate="animate"
             >
-              <motion.div className="title" variants={accountVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
+              <motion.div
+                className="title"
+                variants={accountVariants}
+                exit={{ x: "-100vw", ease: "easeInOut" }}
+              >
                 <h1>Already have an account </h1>
                 <div>
                   <button onClick={handleLogin}>
@@ -146,12 +157,19 @@ export default function AccountPage() {
                   </button>
                 </div>
               </motion.div>
-              <motion.div className="login-signup" variants={accountVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
+              <motion.div
+                className="login-signup"
+                variants={accountVariants}
+                exit={{ x: "-100vw", ease: "easeInOut" }}
+              >
                 <LoginSignup
                   login={login}
                   signup={signup}
                   createAccount={createAccount}
                   loginAccount={loginAccount}
+                  setLoadingState={setLoadingState}
+                  loadingState={loadingState}
+                  message={message}
                 />
               </motion.div>
             </motion.div>

@@ -5,12 +5,14 @@ export default function LoginSignup({
   login,
   createAccount,
   loginAccount,
+  setLoadingState,
+  loadingState,
+  message
 }) {
   const [signupEmail, setSignupEmail] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const [loadingState, setLoadingState] = useState(false);
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     setLoadingState(true);
@@ -96,6 +98,9 @@ export default function LoginSignup({
                 <input type="submit" value="Login" id="submit" />
               </form>
             </div>
+          )}
+          {message.length > 0 && (
+            <p>{message}</p>
           )}
         </>
       )}
