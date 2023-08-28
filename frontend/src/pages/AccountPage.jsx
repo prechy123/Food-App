@@ -96,6 +96,7 @@ export default function AccountPage() {
       const message = response.data.message;
       if (message === "Email does not exist") {
         setMessage("Email address does not exist... Try another or signup");
+        setLoadingState(false)
       }
       if (response.data.token === undefined) {
         return console.log("Undefined");
