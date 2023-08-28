@@ -5,6 +5,27 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import expirationTime from "../calculate/expirationTime";
 import SaveAccountCom from "./SaveAccountContent";
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+const accountVariants = {
+  initial: {
+    x: "100vw",
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 1.3,
+    },
+  },
+};
 
 export default function AccountPage() {
   const [login, setLogin] = useState(false);
@@ -105,12 +126,16 @@ export default function AccountPage() {
   return (
     <>
       {isAuthenticated ? (
-        <SaveAccountCom tokenData={tokenData} />
+        <SaveAccountCom tokenData={tokenData}/>
       ) : (
         <>
           <section id="account-page">
-            <div>
-              <div className="title">
+            <motion.div
+              variants={sectionVariants}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.div className="title" variants={accountVariants}>
                 <h1>Already have an account </h1>
                 <div>
                   <button onClick={handleLogin}>
@@ -120,16 +145,16 @@ export default function AccountPage() {
                     <span className="second"></span>Signup
                   </button>
                 </div>
-              </div>
-              <div className="login-signup">
+              </motion.div>
+              <motion.div className="login-signup" variants={accountVariants}>
                 <LoginSignup
                   login={login}
                   signup={signup}
                   createAccount={createAccount}
                   loginAccount={loginAccount}
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </section>
           <FooterLayout />
         </>
