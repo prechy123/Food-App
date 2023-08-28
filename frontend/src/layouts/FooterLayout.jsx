@@ -8,9 +8,11 @@ import linkedin from "../image/linkedin.png";
 const imgVariants = {
   initial: {
     x: "-100",
+    opacity: 0
   },
   animate: {
     x: 0,
+    opacity: 1,
     transition: {
       duration: 1,
       staggerChildren: 0.5,
