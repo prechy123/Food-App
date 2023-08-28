@@ -62,6 +62,8 @@ export default function Chef() {
         initial="initial"
         animate="animate"
         className="icon-logo"
+        drag
+        dragConstraints={{top: 0, bottom: 0, left: 0, right: 0}}
       >
         <g
           transform="translate(0.000000,50.000000) scale(0.009766,-0.009766)"
