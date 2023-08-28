@@ -49,10 +49,8 @@ export default function LoginSignup({
                     type="email"
                     name="email"
                     value={signupEmail}
-                    onChange={(e) => {
-                      setSignupEmail(e.target.value);
-                      setMessage("");
-                    }}
+                    onChange={(e) => setSignupEmail(e.target.value)}
+                    onClick={() => setMessage("")}
                     required
                   />
                   <span>Email Address</span>
@@ -63,10 +61,8 @@ export default function LoginSignup({
                     type="password"
                     name="password"
                     value={signupPassword}
-                    onChange={(e) => {
-                      setSignupPassword(e.target.value);
-                      setMessage("");
-                    }}
+                    onChange={(e) => setSignupPassword(e.target.value)}
+                    onClick={() => setMessage("")}
                     minLength={10}
                     required
                   />
