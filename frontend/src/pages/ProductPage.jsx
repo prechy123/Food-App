@@ -4,6 +4,8 @@ import ProductComponent from "../components/ProductComponent";
 import axios from "axios";
 import FooterLayout from "../layouts/FooterLayout";
 
+
+
 export default function ProductPage() {
   const [meal, setMeal] = useState([]);
   const { id } = useParams();

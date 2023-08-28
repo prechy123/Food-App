@@ -1,9 +1,30 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+const contentVariants = {
+  initial: {
+    x: "100vw",
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 1.3,
+    },
+  },
+};
 
 export default function ProductComponent({ meal }) {
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const handleAddClick = async () => {
     const token = Cookies.get("token");
@@ -12,15 +33,20 @@ export default function ProductComponent({ meal }) {
         token: token,
         mealId: meal.idMeal,
       });
-      setSuccess(true)
+      setSuccess(true);
     } catch (err) {
       setError(true);
     }
   };
 
   return (
-    <div className="product-component">
-      <div>
+    <motion.div
+      className="product-component"
+      variants={sectionVariants}
+      initial="initial"
+      animate="animate"
+    >
+      <motion.div variants={contentVariants}>
         <h1>{meal.strMeal}</h1>
         <em>{meal.strCategory}</em>
         <br></br>
@@ -29,18 +55,18 @@ export default function ProductComponent({ meal }) {
         <button onClick={handleAddClick} className="save-food">
           <span></span> Save Food
         </button>
-        {success && (
-          <h1 className="success">
-            Added Successfully 👍
-          </h1>
-        )}
+        {success && <h1 className="success">Added Successfully 👍</h1>}
         {error && (
           <h1 className="error">
             Login/signup to Account <a href="/account">Click here</a>
           </h1>
         )}
-      </div>
-      <img src={meal.strMealThumb} alt={meal.strMeal} />
-    </div>
+      </motion.div>
+      <motion.img
+        variants={contentVariants}
+        src={meal.strMealThumb}
+        alt={meal.strMeal}
+      />
+    </motion.div>
   );
 }
