@@ -1,13 +1,15 @@
 import React from "react";
-import chef from "../image/chef.png";
+// import chef from "../image/chef.png";
 import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import Chef from "../image/Chef";
 
 export default function HeaderLayout() {
   return (
     <>
       <nav>
-        <img src={chef} alt="chef" width={50} />
+        <Chef />
+        {/* <img src={chef} alt="chef" width={50} /> */}
         <ul>
           <li>
             <NavLink to="/">HOME</NavLink>
