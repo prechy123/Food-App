@@ -1,9 +1,30 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import axios from "axios"
+import axios from "axios";
 import FoodForm from "../components/FoodForm";
 import MealCom from "../components/MealCom";
 import FooterLayout from "../layouts/FooterLayout";
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+const searchVariants = {
+  initial: {
+    x: "100vw",
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 1.3,
+    },
+  },
+};
 
 export default function SearchPage() {
   const [food, setFood] = useState("");
@@ -24,16 +45,26 @@ export default function SearchPage() {
   return (
     <>
       <section id="search-page">
-        <FoodForm setFood={setFood} />
-        <div className="component">
-          {theMeals
-            ? theMeals.meals
-              ? theMeals.meals.map((meal) => {
+        <motion.div
+          variants={sectionVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <FoodForm setFood={setFood} searchVariants={searchVariants}/>
+          <motion.div className="component" variants={searchVariants}>
+            {theMeals ? (
+              theMeals.meals ? (
+                theMeals.meals.map((meal) => {
                   return <MealCom meal={meal} key={meal.idMeal} />;
                 })
-              : <h1>No such Food exist try sagain</h1>
-            : ""}
-        </div>
+              ) : (
+                <h1>No such Food exist try sagain</h1>
+              )
+            ) : (
+              ""
+            )}
+          </motion.div>
+        </motion.div>
       </section>
       <FooterLayout />
     </>

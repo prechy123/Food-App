@@ -185,11 +185,16 @@ nav .icon-logo {
     width: 100dvw;
     height: calc(100vh - 124px);
     height: calc(100dvh - 124px);
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; */
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+}
+#search-page div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 #search-page form{
     background-color: var(--color3);

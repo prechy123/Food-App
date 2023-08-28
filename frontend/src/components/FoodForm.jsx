@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
-function FoodForm({ setFood }) {
+function FoodForm({ setFood, searchVariants }) {
   const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
@@ -12,7 +13,7 @@ function FoodForm({ setFood }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <motion.form onSubmit={handleSubmit} variants={searchVariants}>
       <div className="inputs">
         <div className="input-text">
           <input
@@ -29,7 +30,7 @@ function FoodForm({ setFood }) {
           <input type="submit" value="Search" className="submit" />
         </div>
       </div>
-    </form>
+    </motion.form>
   );
 }
 
