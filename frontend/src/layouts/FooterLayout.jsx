@@ -8,7 +8,7 @@ import linkedin from "../image/linkedin.png";
 const divVariants = {
   initial: {
     x: "-100",
-    opacity: 0
+    opacity: 0,
   },
   animate: {
     x: 0,
@@ -23,7 +23,7 @@ const imgVariants = {
   initial: {
     x: "-100",
     opacity: 0,
-    rotate: -360
+    rotate: -360,
   },
   animate: {
     x: 0,
@@ -40,11 +40,36 @@ export default function FooterLayout() {
   const date = new Date().getFullYear();
   return (
     <footer>
-      <motion.div className="img" variants={divVariants} initial="initial" animate="animate">
-        <motion.img variants={imgVariants} src={facebook} alt="facebook" width={30} />
-        <motion.img variants={imgVariants} src={github} alt="github" width={30} />
-        <motion.img variants={imgVariants} src={instagram} alt="instagram" width={30} />
-        <motion.img variants={imgVariants} src={linkedin} alt="linkedin" width={30} />
+      <motion.div
+        className="img"
+        variants={divVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <motion.img
+          variants={imgVariants}
+          src={facebook}
+          alt="facebook"
+          width={30}
+        />
+        <motion.img
+          variants={imgVariants}
+          src={github}
+          alt="github"
+          width={30}
+        />
+        <motion.img
+          variants={imgVariants}
+          src={instagram}
+          alt="instagram"
+          width={30}
+        />
+        <motion.img
+          variants={imgVariants}
+          src={linkedin}
+          alt="linkedin"
+          width={30}
+        />
       </motion.div>
       <div>
         <p>Copyright {date}.</p>
