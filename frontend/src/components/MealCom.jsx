@@ -1,8 +1,24 @@
+import { motion } from "framer-motion";
 
+const mealsVariants = {
+  initial: {
+    y: 100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
 function MealCom({ meal }) {
   const url = "/product/" + meal.idMeal;
   return (
-    <a href={url}>
+    <motion.a
+      href={url}
+      variants={mealsVariants}
+      initial="initial"
+      animate="animate"
+    >
       <div className="search-component">
         <div className="search-img-d">
           <div className="search-img">
@@ -11,7 +27,7 @@ function MealCom({ meal }) {
           <h2>{meal.strMeal}</h2>
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 }
 export default MealCom;

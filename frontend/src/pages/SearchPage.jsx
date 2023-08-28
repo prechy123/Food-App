@@ -50,15 +50,19 @@ export default function SearchPage() {
           initial="initial"
           animate="animate"
         >
-          <FoodForm setFood={setFood} searchVariants={searchVariants}/>
-          <motion.div className="component" variants={searchVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
+          <FoodForm setFood={setFood} searchVariants={searchVariants} />
+          <motion.div
+            className="component"
+            variants={searchVariants}
+            exit={{ x: "-100vw", ease: "easeInOut" }}
+          >
             {theMeals ? (
               theMeals.meals ? (
                 theMeals.meals.map((meal) => {
                   return <MealCom meal={meal} key={meal.idMeal} />;
                 })
               ) : (
-                <h1>No such Food exist try sagain</h1>
+                <h1>No such Food exist try again</h1>
               )
             ) : (
               ""
