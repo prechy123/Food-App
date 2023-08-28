@@ -46,7 +46,7 @@ export default function ProductComponent({ meal }) {
       initial="initial"
       animate="animate"
     >
-      <motion.div variants={contentVariants}>
+      <motion.div variants={contentVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
         <h1>{meal.strMeal}</h1>
         <em>{meal.strCategory}</em>
         <br></br>
@@ -66,6 +66,7 @@ export default function ProductComponent({ meal }) {
         variants={contentVariants}
         src={meal.strMealThumb}
         alt={meal.strMeal}
+        exit={{ x: "-100vw", ease: "easeInOut"}}
       />
     </motion.div>
   );
