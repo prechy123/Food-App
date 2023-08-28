@@ -102,7 +102,7 @@ export default function AccountPage() {
       }
       if (message === "Incorrect password") {
         setMessage(
-          "Incorrect password entered... Try another password or Create a new account"
+          "Incorrect password entered.... Try another password or Create a new account"
         );
         setLoadingState(false);
       }
