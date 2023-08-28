@@ -22,7 +22,7 @@ const accountVariants = {
   animate: {
     x: 0,
     transition: {
-      duration: 1.3,
+      duration: 1,
     },
   },
 };
