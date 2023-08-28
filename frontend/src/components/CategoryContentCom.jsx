@@ -10,6 +10,12 @@ const componentVariants = {
     y: 0,
     opacity: 1,
   },
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOnt"
+    }
+  }
 };
 
 export default function CategoryContentCom({ theCategory, index }) {
