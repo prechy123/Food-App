@@ -295,6 +295,7 @@ nav .icon-logo {
     height: calc(100vh - 124px);
     height: calc(100dvh - 124px);
     overflow-y: scroll;
+    overflow-x: hidden;
     padding: 20px;
     background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
