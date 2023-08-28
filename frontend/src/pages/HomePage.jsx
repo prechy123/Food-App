@@ -2,25 +2,24 @@ import FooterLayout from "../layouts/FooterLayout";
 import { motion } from "framer-motion";
 
 const sectionVariants = {
-  initial: {
-  },
+  initial: {},
   animate: {
     transition: {
-      staggerChildren: 0.5
-    }
+      staggerChildren: 0.5,
+    },
   },
 };
 const sideVariants = {
   initial: {
-    x: "100vw"
+    x: "100vw",
   },
   animate: {
     x: 0,
     transition: {
       duration: 1.3,
-    }
-  }
-}
+    },
+  },
+};
 export default function HomePage() {
   return (
     <>
@@ -30,7 +29,7 @@ export default function HomePage() {
         initial="initial"
         animate="animate"
       >
-        <motion.div className="l-side" variants={sideVariants}>
+        <motion.div className="l-side" variants={sideVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
           <h1>
             <span>Welcome to </span>Meal App
           </h1>
@@ -42,7 +41,11 @@ export default function HomePage() {
             to represent global flavors and gastronomic delights.
           </p>
         </motion.div>
-        <motion.div className="r-side" variants={sideVariants}>
+        <motion.div
+          className="r-side"
+          variants={sideVariants}
+          exit={{ x: "-100vw", ease: "easeInOut"}}
+        >
           <div className="grid-container">
             <div className="grid-item-1"></div>
             <div className="grid-item-2"></div>
