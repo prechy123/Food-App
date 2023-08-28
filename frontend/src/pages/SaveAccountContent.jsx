@@ -4,6 +4,19 @@ import FoodCom from "../components/FoodCom";
 import { v4 as uuid } from "uuid";
 import Cookies from "js-cookie";
 import FooterLayout from "../layouts/FooterLayout";
+import { motion } from "framer-motion";
+
+const accountVariants = {
+  initial: {
+    x: "100vw",
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 1.3,
+    },
+  },
+};
 
 export default function SaveAccountCom({ tokenData }) {
   const [foods, setFoods] = useState([]);
@@ -35,7 +48,12 @@ export default function SaveAccountCom({ tokenData }) {
   return (
     <>
       <section id="saved-content">
-        <div className="content-container">
+        <motion.div
+          className="content-container"
+          variants={accountVariants}
+          initial="initial"
+          animate="animate"
+        >
           {foods.length > 0 &&
             foods.map((food) => (
               <FoodCom
@@ -45,7 +63,7 @@ export default function SaveAccountCom({ tokenData }) {
                 deleteFood={deleteFood}
               />
             ))}
-        </div>
+        </motion.div>
         <div className="log-out">
           <a href="http://localhost:3000/account" onClick={handleOnClickLogOut}>
             <span></span>
