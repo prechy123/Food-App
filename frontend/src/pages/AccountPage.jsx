@@ -170,6 +170,7 @@ export default function AccountPage() {
                   setLoadingState={setLoadingState}
                   loadingState={loadingState}
                   message={message}
+                  setMessage={setMessage}
                 />
               </motion.div>
             </motion.div>

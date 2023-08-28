@@ -7,7 +7,8 @@ export default function LoginSignup({
   loginAccount,
   setLoadingState,
   loadingState,
-  message
+  message,
+  setMessage,
 }) {
   const [signupEmail, setSignupEmail] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
@@ -26,6 +27,12 @@ export default function LoginSignup({
     loginAccount(loginEmail, loginPassword);
     setLoginEmail("");
     setLoginPassword("");
+  };
+  const inputOnchange = () => {
+    setMessage("");
+  };
+  const signupOnchange = (e) => {
+    setMessage("");
   };
   return (
     <>
@@ -47,7 +54,10 @@ export default function LoginSignup({
                     type="email"
                     name="email"
                     value={signupEmail}
-                    onChange={(e) => setSignupEmail(e.target.value)}
+                    onChange={(e) => {
+                      setSignupEmail(e.target.value);
+                      setMessage("");
+                    }}
                     required
                   />
                   <span>Email Address</span>
@@ -58,7 +68,10 @@ export default function LoginSignup({
                     type="password"
                     name="password"
                     value={signupPassword}
-                    onChange={(e) => setSignupPassword(e.target.value)}
+                    onChange={(e) => {
+                      setSignupPassword(e.target.value);
+                      setMessage("");
+                    }}
                     minLength={10}
                     required
                   />
@@ -99,9 +112,7 @@ export default function LoginSignup({
               </form>
             </div>
           )}
-          {message.length > 0 && (
-            <p>{message}</p>
-          )}
+          {message.length > 0 && <p>{message}</p>}
         </>
       )}
     </>
