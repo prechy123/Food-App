@@ -29,7 +29,11 @@ export default function HomePage() {
         initial="initial"
         animate="animate"
       >
-        <motion.div className="l-side" variants={sideVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
+        <motion.div
+          className="l-side"
+          variants={sideVariants}
+          exit={{ x: "-100vw", ease: "easeInOut" }}
+        >
           <h1>
             <span>Welcome to </span>Meal App
           </h1>
@@ -44,7 +48,7 @@ export default function HomePage() {
         <motion.div
           className="r-side"
           variants={sideVariants}
-          exit={{ x: "-100vw", ease: "easeInOut"}}
+          exit={{ x: "-100vw", ease: "easeInOut" }}
         >
           <div className="grid-container">
             <div className="grid-item-1"></div>
