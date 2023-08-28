@@ -477,6 +477,10 @@ nav .icon-logo {
     pointer-events: all;
     color: black;
 }
+#product-page .product-component div .success a{
+    pointer-events: all;
+    color: black;
+}
 
 /*End Product section*/
 #account-page {
