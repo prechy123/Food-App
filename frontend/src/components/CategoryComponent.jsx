@@ -1,14 +1,34 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const anchorVariant = {
+  initial: {
+    x: 200,
+    opacity: 0,
+  },
+  inView: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1
+    }
+  },
+};
 
 export default function categoryComponent({ category }) {
   const url = "/categories/" + category.strCategory;
   return (
     <a href={url}>
-      <div className="category-component">
+      <motion.div
+        className="category-component"
+        variants={anchorVariant}
+        initial="initial"
+        whileInView="inView"
+      >
         <div>
           <img
             src={category.strCategoryThumb}
-            alt={category.strCategory}  
+            alt={category.strCategory}
             className="theImg"
           />
         </div>
@@ -16,7 +36,7 @@ export default function categoryComponent({ category }) {
           <h1>{category.strCategory}</h1>
           <p>{category.strCategoryDescription}</p>
         </div>
-      </div>
+      </motion.div>
     </a>
   );
 }
