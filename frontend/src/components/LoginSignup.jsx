@@ -28,12 +28,7 @@ export default function LoginSignup({
     setLoginEmail("");
     setLoginPassword("");
   };
-  const inputOnchange = () => {
-    setMessage("");
-  };
-  const signupOnchange = (e) => {
-    setMessage("");
-  };
+
   return (
     <>
       {loadingState ? (
