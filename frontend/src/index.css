@@ -337,7 +337,7 @@ nav .icon-logo {
     transition: scale 1s ease;
 }
 #categories-page div .category-component div .theImg:hover {
-    scale: 1.4;
+    scale: 1.2;
 }
 #categories-page div .category-component div:last-child p{
     background-color: var(--color3);

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const anchorVariant = {
+const comVariant = {
   initial: {
     x: 200,
     opacity: 0,
@@ -10,8 +10,8 @@ const anchorVariant = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 1
-    }
+      duration: 1,
+    },
   },
 };
 
@@ -21,7 +21,7 @@ export default function categoryComponent({ category }) {
     <a href={url}>
       <motion.div
         className="category-component"
-        variants={anchorVariant}
+        variants={comVariant}
         initial="initial"
         whileInView="inView"
       >
