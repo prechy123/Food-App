@@ -51,7 +51,7 @@ export default function SearchPage() {
           animate="animate"
         >
           <FoodForm setFood={setFood} searchVariants={searchVariants}/>
-          <motion.div className="component" variants={searchVariants}>
+          <motion.div className="component" variants={searchVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
             {theMeals ? (
               theMeals.meals ? (
                 theMeals.meals.map((meal) => {

@@ -34,6 +34,7 @@ export default function CategoriesPage() {
           variants={categoriesVariants}
           initial="initial"
           animate="animate"
+          exit={{ x: "-100vw", ease: "easeInOut"}}
         >
           {categories.map((category) => {
             return (

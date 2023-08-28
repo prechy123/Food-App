@@ -13,7 +13,7 @@ function FoodForm({ setFood, searchVariants }) {
   };
 
   return (
-    <motion.form onSubmit={handleSubmit} variants={searchVariants}>
+    <motion.form onSubmit={handleSubmit} variants={searchVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
       <div className="inputs">
         <div className="input-text">
           <input
