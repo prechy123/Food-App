@@ -33,9 +33,9 @@ export default function ProductComponent({ meal }) {
         token: token,
         mealId: meal.idMeal,
       });
-      const message = response.data.message
+      const message = response.data.message;
       if (message === "account not found") {
-        return setError(true)
+        return setError(true);
       }
       setSuccess(true);
     } catch (err) {
@@ -50,7 +50,10 @@ export default function ProductComponent({ meal }) {
       initial="initial"
       animate="animate"
     >
-      <motion.div variants={contentVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
+      <motion.div
+        variants={contentVariants}
+        exit={{ x: "-100vw", ease: "easeInOut" }}
+      >
         <h1>{meal.strMeal}</h1>
         <em>{meal.strCategory}</em>
         <br></br>
@@ -59,7 +62,11 @@ export default function ProductComponent({ meal }) {
         <button onClick={handleAddClick} className="save-food">
           <span></span> Save Food
         </button>
-        {success && <h1 className="success">Added Successfully 👍</h1>}
+        {success && (
+          <h1 className="success">
+            Added Successfully 👍 <a href="/account">View now</a>
+          </h1>
+        )}
         {error && (
           <h1 className="error">
             Login/signup to Account <a href="/account">Click here</a>
@@ -70,7 +77,7 @@ export default function ProductComponent({ meal }) {
         variants={contentVariants}
         src={meal.strMealThumb}
         alt={meal.strMeal}
-        exit={{ x: "-100vw", ease: "easeInOut"}}
+        exit={{ x: "-100vw", ease: "easeInOut" }}
       />
     </motion.div>
   );
