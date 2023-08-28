@@ -135,7 +135,7 @@ export default function AccountPage() {
               initial="initial"
               animate="animate"
             >
-              <motion.div className="title" variants={accountVariants}>
+              <motion.div className="title" variants={accountVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
                 <h1>Already have an account </h1>
                 <div>
                   <button onClick={handleLogin}>
@@ -146,7 +146,7 @@ export default function AccountPage() {
                   </button>
                 </div>
               </motion.div>
-              <motion.div className="login-signup" variants={accountVariants}>
+              <motion.div className="login-signup" variants={accountVariants} exit={{ x: "-100vw", ease: "easeInOut"}}>
                 <LoginSignup
                   login={login}
                   signup={signup}

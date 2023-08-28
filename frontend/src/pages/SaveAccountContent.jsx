@@ -53,6 +53,7 @@ export default function SaveAccountCom({ tokenData }) {
           variants={accountVariants}
           initial="initial"
           animate="animate"
+          exit={{ x: "-100vw", ease: "easeInOut" }}
         >
           {foods.length > 0 &&
             foods.map((food) => (
@@ -64,12 +65,15 @@ export default function SaveAccountCom({ tokenData }) {
               />
             ))}
         </motion.div>
-        <div className="log-out">
+        <motion.div
+          className="log-out"
+          exit={{ x: "-100vw", ease: "easeInOut" }}
+        >
           <a href="http://localhost:3000/account" onClick={handleOnClickLogOut}>
             <span></span>
             Log-Out
           </a>
-        </div>
+        </motion.div>
       </section>
       <FooterLayout />
     </>
