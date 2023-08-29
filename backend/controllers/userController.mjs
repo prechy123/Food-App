@@ -86,16 +86,25 @@ export const addFood = async (req, res) => {
   const { userId } = req.user;
   try {
     if (userId === undefined) {
-      return res.json({message: "account not found"})
+      return res.json({ message: "account not found" });
     }
     const updatedUser = await User.findByIdAndUpdate(
       userId,
-      { $push: { food: { stringValue: mealId } } },
+      // { $push: { food: { stringValue: mealId } } },
+      {
+        $push: {
+          food: {
+            $each: [{ stringValue: mealId }],
+            $position: 0,
+          },
+        },
+      },
       { new: true }
     );
     res.status(200).json({ food: "added", user: updatedUser });
   } catch (err) {
     res.status(500).json({ error: err.message });
+    console.log(err);
   }
 };
 
