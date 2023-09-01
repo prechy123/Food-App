@@ -6,11 +6,11 @@ export default function ContactPage() {
     <>
       <section id="contactPage">
         <h1>About Us</h1>
-        <div>
-          <div>
+        <div className="contents">
+          <div className="content-img">
               <img src="https://picsum.photos/400" alt="lorem-ipsum" />
           </div>
-          <div>
+          <div className="content-info">
               <h1>Our Story</h1>
               <p>Our story began with a simple idea: to make cooking and enjoying meals more convenient and enjoyable. We understand that in today's fast-paced world, finding the time and inspiration to prepare homemade meals can be challenging. That's why we set out to create a meal app that caters to all your culinary needs.</p>
               <h1>Our Vision</h1>
