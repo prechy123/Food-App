@@ -1,12 +1,31 @@
 import React from "react";
 import FooterLayout from "../layouts/FooterLayout";
+import { motion } from "framer-motion";
 
+const aboutVariants = {
+  initial: {
+    x: "100vw",
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 export default function ContactPage() {
   return (
     <>
       <section id="AboutPage">
-        <h1>About Us</h1>
-        <div className="contents">
+        <motion.h1         variants={aboutVariants}
+        initial="initial"
+        animate="animate">About Us</motion.h1>
+        <motion.div
+          className="contents"
+          variants={aboutVariants}
+          initial="initial"
+          animate="animate"
+        >
           <div className="content-img">
             <img src="https://picsum.photos/600/400" alt="lorem-ipsum" />
           </div>
@@ -78,10 +97,11 @@ export default function ContactPage() {
               Whether you're a seasoned chef or just starting your culinary
               adventure, we're here to help you every step of the way. Together,
               let's explore the world of flavors, create memorable meals, and
-              savor the joy of food.<br></br> Happy cooking! <br></br>Culinary App Team.
+              savor the joy of food.<br></br> Happy cooking! <br></br>Culinary
+              App Team.
             </p>
           </div>
-        </div>
+        </motion.div>
       </section>
       <FooterLayout />
     </>
