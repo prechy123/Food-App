@@ -740,6 +740,16 @@ nav .icon-logo {
     height: 100%;
 }
 /*End saved account content page*/
+/*Start contect page*/
+#contactPage {
+    width: 100vw;
+    width: 100dvw;
+    height: calc(100vh - 124px);
+    height: calc(100dvh - 124px);
+    padding: 20px;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+}
+/*End contact page*/
 /*Start footer*/
 footer {
     width: auto;

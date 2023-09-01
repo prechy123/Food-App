@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import FooterLayout from "../layouts/FooterLayout";
 
 export default function ContactPage() {
   return (
-    <div>ContactPage</div>
-  )
+    <>
+      <section id="contactPage"></section>
+      <FooterLayout />
+    </>
+  );
 }
