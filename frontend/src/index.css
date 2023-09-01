@@ -762,6 +762,7 @@ nav .icon-logo {
     display: flex;
     gap: 30px;
 }
+
 #AboutPage .contents .content-img img {
     border-radius: 20px;
     box-shadow: 0px 0px 20px var(--color3);

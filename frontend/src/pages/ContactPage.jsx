@@ -2,7 +2,7 @@ import React from "react";
 import FooterLayout from "../layouts/FooterLayout";
 import { motion } from "framer-motion";
 
-const aboutVariants = {
+const headingVariants = {
   initial: {
     x: "100vw",
   },
@@ -13,23 +13,39 @@ const aboutVariants = {
     },
   },
 };
+const aboutVariants = {
+  initial: {
+    x: "100vw",
+  },
+  animate: {
+    x: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.5,
+    },
+  },
+};
 export default function ContactPage() {
   return (
     <>
       <section id="AboutPage">
-        <motion.h1         variants={aboutVariants}
-        initial="initial"
-        animate="animate">About Us</motion.h1>
+        <motion.h1
+          variants={headingVariants}
+          initial="initial"
+          animate="animate"
+        >
+          About Us
+        </motion.h1>
         <motion.div
           className="contents"
           variants={aboutVariants}
           initial="initial"
           animate="animate"
         >
-          <div className="content-img">
+          <motion.div className="content-img" variants={aboutVariants}>
             <img src="https://picsum.photos/600/400" alt="lorem-ipsum" />
-          </div>
-          <div className="content-info">
+          </motion.div>
+          <motion.div className="content-info" variants={aboutVariants}>
             <h1>Our Story</h1>
             <p>
               Our story began with a simple idea: to make cooking and enjoying
@@ -100,7 +116,7 @@ export default function ContactPage() {
               savor the joy of food.<br></br> Happy cooking! <br></br>Culinary
               App Team.
             </p>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
       <FooterLayout />
