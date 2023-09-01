@@ -4,7 +4,7 @@ import FooterLayout from "../layouts/FooterLayout";
 export default function ContactPage() {
   return (
     <>
-      <section id="contactPage">
+      <section id="AboutPage">
         <h1>About Us</h1>
         <div className="contents">
           <div className="content-img">

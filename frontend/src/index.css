@@ -741,7 +741,7 @@ nav .icon-logo {
 }
 /*End saved account content page*/
 /*Start contect page*/
-#contactPage {
+#AboutPage {
     width: 100vw;
     width: 100dvw;
     height: calc(100vh - 124px);
@@ -749,18 +749,26 @@ nav .icon-logo {
     padding: 20px;
     background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
-#contactPage h1 {
+#AboutPage h1 {
     color: var(--color3);
 }
-#contactPage > h1 {
+#AboutPage > h1 {
     text-align: center;
     color: var(--color3);
     font-size: 50px;
 }
-#contactPage .contents {
+#AboutPage .contents {
     width: 100%;
     display: flex;
-    gap: 20px;
+    gap: 30px;
+}
+#AboutPage .contents .content-img img {
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px var(--color3);
+}
+#AboutPage .contents .content-info {
+    height: calc(100vh - 200px);
+    overflow-y: scroll;
 }
 
 /*End contact page*/
