@@ -754,6 +754,10 @@ nav .icon-logo {
     color: var(--color3);
     font-size: 50px;
 }
+#contactPage .contents {
+    width: 100%;
+    display: flex;
+}
 
 /*End contact page*/
 /*Start footer*/

@@ -8,7 +8,7 @@ export default function ContactPage() {
         <h1>About Us</h1>
         <div className="contents">
           <div className="content-img">
-              <img src="https://picsum.photos/400" alt="lorem-ipsum" />
+              <img src="https://picsum.photos/600/400" alt="lorem-ipsum" />
           </div>
           <div className="content-info">
               <h1>Our Story</h1>
