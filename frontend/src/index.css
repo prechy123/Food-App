@@ -750,7 +750,9 @@ nav .icon-logo {
     background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 #contactPage > h1 {
-    
+    text-align: center;
+    color: var(--color3);
+    font-size: 50px;
 }
 
 /*End contact page*/
