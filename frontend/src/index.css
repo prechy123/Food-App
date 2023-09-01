@@ -770,6 +770,12 @@ nav .icon-logo {
     height: calc(100vh - 200px);
     overflow-y: scroll;
 }
+#AboutPage .contents .content-info h1 {
+    margin-top: 15px;
+}
+#AboutPage .contents .content-info h1:first-child{
+    margin-top: 0;
+}
 
 /*End contact page*/
 /*Start footer*/

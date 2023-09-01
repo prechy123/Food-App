@@ -78,7 +78,7 @@ export default function ContactPage() {
               Whether you're a seasoned chef or just starting your culinary
               adventure, we're here to help you every step of the way. Together,
               let's explore the world of flavors, create memorable meals, and
-              savor the joy of food. Happy cooking! Culinary App Team
+              savor the joy of food.<br></br> Happy cooking! <br></br>Culinary App Team.
             </p>
           </div>
         </div>
