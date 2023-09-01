@@ -35,10 +35,10 @@ export default function HomePage() {
           exit={{ x: "-100vw", ease: "easeInOut" }}
         >
           <h1>
-            <span>Welcome to </span>Meal App
+            <span>Welcome to </span>Culinary App
           </h1>
           <p>
-            Experience a culinary journey like no other with the Meal App,
+            Experience a culinary adventure like no other with the Meal App,
             offering an exclusive collection of top-notch recipes sourced from
             diverse corners of the world. Elevate your cooking endeavors by
             accessing a wide array of high-quality recipes, thoughtfully curated

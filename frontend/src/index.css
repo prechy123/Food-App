@@ -749,6 +749,9 @@ nav .icon-logo {
     padding: 20px;
     background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
+#contactPage h1 {
+    color: var(--color3);
+}
 #contactPage > h1 {
     text-align: center;
     color: var(--color3);
@@ -757,6 +760,7 @@ nav .icon-logo {
 #contactPage .contents {
     width: 100%;
     display: flex;
+    gap: 20px;
 }
 
 /*End contact page*/
