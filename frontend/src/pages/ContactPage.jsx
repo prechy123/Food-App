@@ -4,7 +4,9 @@ import FooterLayout from "../layouts/FooterLayout";
 export default function ContactPage() {
   return (
     <>
-      <section id="contactPage"></section>
+      <section id="contactPage">
+        
+      </section>
       <FooterLayout />
     </>
   );
