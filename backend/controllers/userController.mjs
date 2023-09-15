@@ -91,6 +91,7 @@ export const addFood = async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(
       userId,
       // { $push: { food: { stringValue: mealId } } },
+      // Use $addToSet to void replacement of items
       {
         $push: {
           food: {
