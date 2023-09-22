@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser"
 
 const app = express();
 
+//cors
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -19,6 +20,7 @@ app.use(express.json());
 
 app.use("/", router);
 
+//mongoose connect and port listening
 mongoose
   .connect(process.env.DB_CONECTION)
   .then(() => {
