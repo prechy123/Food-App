@@ -20,7 +20,6 @@ app.use(express.json());
 
 app.use("/", router);
 
-//mongoose connect and port listening
 mongoose
   .connect(process.env.DB_CONECTION)
   .then(() => {
