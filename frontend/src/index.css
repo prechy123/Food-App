@@ -336,11 +336,6 @@ nav .icon-logo {
 @media screen and (max-width: 674px) {
     #search-page form .input-text input{
         width: 80%;
-        height: 30px;
-        padding: 5px;
-        outline: none;
-        border: 1px solid black;
-        border-radius: 10px;
     }
     #search-page .component {
         display: grid;
