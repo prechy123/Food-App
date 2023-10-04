@@ -820,7 +820,11 @@ nav .icon-logo {
 #AboutPage .contents .content-info h1:first-child{
     margin-top: 0;
 }
-
+@media screen and (max-width: 1000px) {
+    #AboutPage .contents .content-img img  {
+        display: none;
+    }
+}
 /*End contact page*/
 /*Start footer*/
 footer {
