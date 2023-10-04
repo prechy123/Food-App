@@ -28,13 +28,13 @@ Before you proceed, ensure that you have the following prerequisites installed:
 - Git: [Download and Install Git](https://git-scm.com/downloads)
 
 ## 2. Project Structure
-mern-food-website/
-├── backend/
-│   └── ...
-├── frontend/
-│   └── ...
-├── ...
-└── README.md
+mern-food-website/  
+├── backend/  
+│   └── ...  
+├── frontend/  
+│   └── ...  
+├── ...  
+└── README.md  
 
 
 
