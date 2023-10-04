@@ -581,6 +581,7 @@ nav .icon-logo {
 #account-page > div .title h1 {
     font-size: 4rem;
     color: var(--color3);
+    white-space: nowrap;
 }
 #account-page > div .title div {
     display: flex;
@@ -702,6 +703,19 @@ nav .icon-logo {
     }
     to {
         width: 200px;
+    }
+}
+@media screen and (max-width: 674px) {
+    #account-page > div .title h1{
+        font-size: 2rem;
+    }
+    #account-page > div .login-signup{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 337px) {
+    #account-page > div .title h1{
+        font-size: 1rem;
     }
 }
 /*End account page*/
