@@ -80,6 +80,19 @@ nav .icon-logo {
     }
 }
 
+@media screen and (max-width: 674px) {
+    nav ul{
+        display: none;
+    }
+    nav .menu {
+        display: inline-block;
+    }
+    nav .menu span{
+        display: block;
+    }
+
+}
+
 /*Start home*/
 #home {
     position: relative;
@@ -183,16 +196,12 @@ nav .icon-logo {
 
 
 @media screen and (max-width: 674px) {
-    nav ul{
+    #home .l-side{
+        width: 100%;
+    }
+    #home .r-side{
         display: none;
     }
-    nav .menu {
-        display: inline-block;
-    }
-    nav .menu span{
-        display: block;
-    }
-    
 }
 
 /*End home*/
