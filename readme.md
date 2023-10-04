@@ -29,12 +29,13 @@ Before you proceed, ensure that you have the following prerequisites installed:
 
 ## 2. Project Structure
 mern-food-website/
-|-- backend/
-| |-- ...
-|-- frontend/
-| |-- ...
-|-- ...
-|-- README.md
+├── backend/
+│   └── ...
+├── frontend/
+│   └── ...
+├── ...
+└── README.md
+
 
 
 ## 3. Setting up the Backend
