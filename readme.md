@@ -46,9 +46,9 @@ mern-food-website/
 2. Install dependencies: Run `npm install`.
 3. Create a `.env` file in the `backend` directory and add the following environment variables:
 
-DB_CONECTION = your_mongodb_connection_string
-PORT = 4000
-MY_SECRET = Your_secret_phrase
+DB_CONECTION = your_mongodb_connection_string  
+PORT = 4000  
+MY_SECRET = Your_secret_phrase  
 
 Replace `your_mongodb_connection_string` with your MongoDB connection string, and `your_jwt_secret` with a secret key for JWT authentication.
 
