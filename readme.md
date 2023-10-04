@@ -8,15 +8,14 @@ This documentation provides detailed instructions on how to set up, install, and
 3. **Setting up the Backend**
     - MongoDB Configuration
     - Express.js Configuration
-4. **Setting up the Frontend**
-    - Environment Variables
-5. **Running the Application**
-6. **Usage**
+    - Environment Variables   
+4. **Running the Application**
+5. **Usage**
     - Searching for Food
     - Viewing Recipes
     - Saving Recipes
-7. **Contributing**
-8. **License**
+6. **Contributing**
+7. **License**
 
 ---
 
