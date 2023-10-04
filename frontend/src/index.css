@@ -441,6 +441,21 @@ nav .icon-logo {
 #category-content .content-img-d .content-text h2 {
     max-width: 20ch;
 }
+@media screen and (max-width: 674px) {
+    #category-content .content-img-d {
+        place-items: center;
+    }
+    #category-content .even-layout{
+        grid-template-areas: 
+            "img"
+            "text";
+    }
+    #category-content .old-layout{
+        grid-template-areas: 
+            "img"
+            "text";
+    }
+}
 
 /*End category-content-component section*/
 /*End categories section*/
