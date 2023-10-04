@@ -882,6 +882,13 @@ footer {
 footer .img {
     width: 15%;
     display: flex;
+    gap: 15px;
     justify-content: space-between;
 }
+@media screen and (max-width: 336px) {
+    footer .img {
+        gap: 10px   ;
+    }
+}
+
 /*End footer*/
