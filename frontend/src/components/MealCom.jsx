@@ -22,7 +22,7 @@ function MealCom({ meal }) {
       <div className="search-component">
         <div className="search-img-d">
           <div className="search-img">
-            <img src={meal.strMealThumb} alt={meal.strMeal} width={100} />
+            <img src={meal.strMealThumb} alt={meal.strMeal} width={1000}/>
           </div>
           <h2>{meal.strMeal}</h2>
         </div>

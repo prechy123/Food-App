@@ -74,8 +74,10 @@ export default function ProductComponent({ meal }) {
         )}
       </motion.div>
       <motion.img
+        className="mealimg"
         variants={contentVariants}
         src={meal.strMealThumb}
+        width={500}
         alt={meal.strMeal}
         exit={{ x: "-100vw", ease: "easeInOut" }}
       />

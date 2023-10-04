@@ -546,7 +546,16 @@ nav .icon-logo {
     pointer-events: all;
     color: black;
 }
-
+@media screen and (max-width: 674px) {
+    #product-page .product-component img {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 465px) {
+    #product-page .product-component img{
+        width: 50px;
+    }
+}
 /*End Product section*/
 #account-page {
     width: 100vw;
