@@ -388,6 +388,11 @@ nav .icon-logo {
     padding: 10px;
     color: var(--color1);
 }
+@media screen and (max-width: 674px) {
+    #categories-page div .category-component {
+        grid-template-columns: 1fr;
+    }
+}
 /*Start category-content-component section*/
 #category-content{
     width: 100vw;
