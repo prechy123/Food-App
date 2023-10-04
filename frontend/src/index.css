@@ -85,12 +85,35 @@ nav .icon-logo {
         display: none;
     }
     nav .menu {
+        cursor: pointer;
         display: inline-block;
     }
     nav .menu span{
         display: block;
     }
-
+    #dropmenu{
+        position: absolute;
+        z-index: 2;
+    }
+    #dropmenu li{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 20px;
+        width: 100%;
+        backdrop-filter: blur(2px);
+    }
+    #dropmenu li a{
+        color: black;
+        text-decoration: none;
+    }
+    #dropmenu li .active{
+        background-color: var(--color3);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
 }
 
 /*Start home*/
