@@ -10,7 +10,7 @@ const app = express();
 //cors
 app.use(
   cors({
-    origin: "https://foodapp-wmqs.onrender.com/",
+    origin: "https://foodapp-wmqs.onrender.com",
     credentials: true
   })
 );
