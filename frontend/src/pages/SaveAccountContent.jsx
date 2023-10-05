@@ -24,11 +24,14 @@ export default function SaveAccountCom({ tokenData }) {
   const { userId } = tokenObject;
   useEffect(() => {
     const foods = async () => {
-      const response = await axios("http://127.0.0.1:4000/getFoods", {
-        params: {
-          userId: userId,
-        },
-      });
+      const response = await axios(
+        "https://food-app-api.onrender.com/getFoods",
+        {
+          params: {
+            userId: userId,
+          },
+        }
+      );
       setFoods(response.data.foods);
     };
     foods();
