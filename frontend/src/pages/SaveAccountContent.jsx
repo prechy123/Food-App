@@ -25,7 +25,7 @@ export default function SaveAccountCom({ tokenData }) {
   useEffect(() => {
     const foods = async () => {
       const response = await axios(
-        "https://food-app-api.onrender.com/getFoods",
+        "https://foodapp-api-41m2.onrender.com/getFoods",
         {
           params: {
             userId: userId,

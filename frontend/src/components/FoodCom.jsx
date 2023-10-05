@@ -19,7 +19,7 @@ export default function FoodCom({ foodId, time, deleteFood }) {
     const token = Cookies.get("token");
     const userId = JSON.parse(atob(token.split(".")[1])).userId;
     const selectedFoodId = e.target.value;
-    await axios.post("https://food-app-api.onrender.com/delete", {
+    await axios.post("https://foodapp-api-41m2.onrender.com/delete", {
       selectedFoodId,
       userId,
     });

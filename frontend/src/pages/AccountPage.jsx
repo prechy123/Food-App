@@ -55,7 +55,7 @@ export default function AccountPage() {
     };
     try {
       const response = await axios.post(
-        "https://food-app-api.onrender.com/signupAccount",
+        "https://foodapp-api-41m2.onrender.com/signupAccount",
         account,
         { withCredentials: true }
       );
@@ -89,7 +89,7 @@ export default function AccountPage() {
     };
     try {
       const response = await axios.post(
-        "https://food-app-api.onrender.com/loginAccount",
+        "https://foodapp-api-41m2.onrender.com/loginAccount",
         account,
         { withCredentials: true }
       );

@@ -30,7 +30,7 @@ export default function ProductComponent({ meal }) {
     const token = Cookies.get("token");
     try {
       const response = await axios.post(
-        "https://food-app-api.onrender.com/add",
+        "https://foodapp-api-41m2.onrender.com/add",
         {
           token: token,
           mealId: meal.idMeal,
