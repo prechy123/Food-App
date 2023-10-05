@@ -9,6 +9,7 @@ import ProductPage from "./pages/ProductPage";
 import AccountPage from "./pages/AccountPage";
 import CategoryContentPage from "./pages/CategoryContentPage";
 import { AnimatePresence } from "framer-motion";
+import NotFound from "./pages/NotFound";
 
 export default function AnimatedRoutes() {
   const location = useLocation();
@@ -22,6 +23,9 @@ export default function AnimatedRoutes() {
         <Route path="contact" element={<ContactPage />} />
         <Route path="account" element={<AccountPage />} />
         <Route path="categories/:cateName" element={<CategoryContentPage />} />
+        
+        {/*Custom 404 route*/}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
