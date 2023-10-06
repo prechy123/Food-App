@@ -39,7 +39,7 @@ export default function ProductComponent({ meal }) {
           mealId: meal.idMeal,
         }
       );
-      setLoading(true)
+      setLoading(false)
       const message = response.data.message;
       if (message === "account not found") {
         return setError(true);
@@ -72,7 +72,7 @@ export default function ProductComponent({ meal }) {
         {loading && (
           <Bars
           height="80"
-          width="60"
+          width="40"
           color="#3a1a1a"
           ariaLabel="bars-loading"
           wrapperStyle={{}}
