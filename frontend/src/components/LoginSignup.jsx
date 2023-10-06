@@ -36,7 +36,7 @@ export default function LoginSignup({
         <div className="loading-state">
           Loading...
           <span></span>
-          Be patient while backend starts up, it takes 1 to 2 minutes
+          Be patient while backend starts up, it may take up to a minute
         </div>
       ) : (
         <>
