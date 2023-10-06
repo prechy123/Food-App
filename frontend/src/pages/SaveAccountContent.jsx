@@ -72,7 +72,7 @@ export default function SaveAccountCom({ tokenData }) {
           className="log-out"
           exit={{ x: "-100vw", ease: "easeInOut" }}
         >
-          <a href="http://localhost:3000/account" onClick={handleOnClickLogOut}>
+          <a href="https://foodapp-wmqs.onrender.com/account" onClick={handleOnClickLogOut}>
             <span></span>
             Log-Out
           </a>
