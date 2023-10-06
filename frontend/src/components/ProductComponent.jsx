@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { motion } from "framer-motion";
+import {Bars} from "react-loader-spinner"
 
 const sectionVariants = {
   initial: {},
@@ -26,7 +27,9 @@ const contentVariants = {
 export default function ProductComponent({ meal }) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false)
   const handleAddClick = async () => {
+    setLoading(true)
     const token = Cookies.get("token");
     try {
       const response = await axios.post(
@@ -36,6 +39,7 @@ export default function ProductComponent({ meal }) {
           mealId: meal.idMeal,
         }
       );
+      setLoading(true)
       const message = response.data.message;
       if (message === "account not found") {
         return setError(true);
@@ -65,6 +69,17 @@ export default function ProductComponent({ meal }) {
         <button onClick={handleAddClick} className="save-food">
           <span></span> Save Food
         </button>
+        {loading && (
+          <Bars
+          height="80"
+          width="60"
+          color="#3a1a1a"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+        )}
         {success && (
           <h1 className="success">
             Added Successfully 👍 <a href="/account">View now</a>
