@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { motion } from "framer-motion";
-import {Bars} from "react-loader-spinner"
+import { Bars } from "react-loader-spinner";
 
 const sectionVariants = {
   initial: {},
@@ -27,10 +27,15 @@ const contentVariants = {
 export default function ProductComponent({ meal }) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false)
-  document.title = meal.strMeal + " | Food App"
+  const [loading, setLoading] = useState(false);
+  let maxLength = 14;
+  let title = meal.strMeal;
+  if (meal.strMeal.length > maxLength) {
+    title = meal.strMeal.substring(0, maxLength) + "...";
+  }
+  document.title = title + " | Food App";
   const handleAddClick = async () => {
-    setLoading(true)
+    setLoading(true);
     const token = Cookies.get("token");
     try {
       const response = await axios.post(
@@ -40,7 +45,7 @@ export default function ProductComponent({ meal }) {
           mealId: meal.idMeal,
         }
       );
-      setLoading(false)
+      setLoading(false);
       const message = response.data.message;
       if (message === "account not found") {
         return setError(true);
@@ -72,14 +77,14 @@ export default function ProductComponent({ meal }) {
         </button>
         {loading && (
           <Bars
-          height="80"
-          width="40"
-          color="#3a1a1a"
-          ariaLabel="bars-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
+            height="80"
+            width="40"
+            color="#3a1a1a"
+            ariaLabel="bars-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
         )}
         {success && (
           <h1 className="success">
