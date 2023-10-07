@@ -28,6 +28,7 @@ export default function ProductComponent({ meal }) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false)
+  document.title = meal.strMeal + " | Food App"
   const handleAddClick = async () => {
     setLoading(true)
     const token = Cookies.get("token");
