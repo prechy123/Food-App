@@ -46,30 +46,30 @@ export default function FooterLayout() {
         initial="initial"
         animate="animate"
       >
-        <motion.img
+        <a href="https://www.instagram.com/prec__hy/"><motion.img
           variants={imgVariants}
           src={facebook}
           alt="facebook"
           width={30}
-        />
-        <motion.img
+        /></a>
+        <a href="https://github.com/prechy123"><motion.img
           variants={imgVariants}
           src={github}
           alt="github"
           width={30}
-        />
-        <motion.img
+        /></a>
+        <a href="https://www.instagram.com/prec__hy/"><motion.img
           variants={imgVariants}
           src={instagram}
           alt="instagram"
           width={30}
-        />
-        <motion.img
+        /></a>
+        <a href="https://www.instagram.com/prec__hy/"><motion.img
           variants={imgVariants}
           src={linkedin}
           alt="linkedin"
           width={30}
-        />
+        /></a>
       </motion.div>
       <div>
         {/* <p>Copyright {date}.</p> */}
