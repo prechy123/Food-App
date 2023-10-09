@@ -72,7 +72,8 @@ export default function FooterLayout() {
         />
       </motion.div>
       <div>
-        <p>Copyright {date}.</p>
+        {/* <p>Copyright {date}.</p> */}
+        <p>Bamidele Precious - {date}</p>
       </div>
     </footer>
   );
