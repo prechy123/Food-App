@@ -47,9 +47,9 @@ mern-food-website/
 
 DB_CONECTION = your_mongodb_connection_string  
 PORT = 4000  
-MY_SECRET = Your_secret_phrase  
+MY_SECRET = Your_jwt_secret_phrase  
 
-Replace `your_mongodb_connection_string` with your MongoDB connection string, and `your_jwt_secret` with a secret key for JWT authentication.
+Replace `your_mongodb_connection_string` with your MongoDB connection string, and `Your_jwt_secret_phrase` with a secret key for JWT authentication.
 
 4. Start the Express.js server: Run `npm start`.
 
