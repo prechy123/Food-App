@@ -11,6 +11,7 @@ import CategoryContentPage from "./pages/CategoryContentPage";
 import { AnimatePresence } from "framer-motion";
 import NotFound from "./pages/NotFound";
 
+//animated route with framer motion for initial and exit animation
 export default function AnimatedRoutes() {
   const location = useLocation();
   return (
