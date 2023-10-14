@@ -1,5 +1,6 @@
 # MERN Stack Food Website with Framer Motion
 
+
 This documentation provides detailed instructions on how to set up, install, and configure a MERN (MongoDB, Express.js, React, Node.js) stack food website with Framer Motion. This website allows users to search for food, view recipes and cooking instructions, and save their favorite recipes to their accounts.
 
 ## Table of Contents
