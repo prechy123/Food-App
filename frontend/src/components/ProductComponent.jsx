@@ -4,6 +4,9 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { Bars } from "react-loader-spinner";
 
+
+//get food ingredients
+
 const sectionVariants = {
   initial: {},
   animate: {
