@@ -61,6 +61,7 @@ nav .icon-logo {
     width: 50px;
 }
 
+
 .active {
     background-color: var(--color3);
     background-clip: text;
@@ -124,7 +125,8 @@ nav .icon-logo {
     height: calc(100vh - 124px);
     height: calc(100dvh - 124px);
     display: flex;   
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
     overflow: hidden;
 }
 /* #home::before {
@@ -238,7 +240,8 @@ nav .icon-logo {
     flex-direction: column;
     align-items: center;
     gap: 30px; */
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
 }
 #search-page div {
     display: flex;
@@ -353,7 +356,8 @@ nav .icon-logo {
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 20px;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
 }
 #categories-page div {
     width: 100%;
@@ -401,7 +405,8 @@ nav .icon-logo {
     height: calc(100dvh - 124px);
     padding: 20px;
     overflow-y: scroll;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
     display: grid;
     place-items: center;
 }
@@ -467,7 +472,8 @@ nav .icon-logo {
     height: calc(100dvh - 124px);
     padding: 20px;
     overflow-y: scroll;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
 }
 #product-page .product-component{
     display: grid;
@@ -563,7 +569,8 @@ nav .icon-logo {
     height: calc(100vh - 124px);
     height: calc(100dvh - 124px);
     padding: 20px;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
     display: flex;
     align-content: center;
     justify-content: center;
@@ -636,7 +643,8 @@ nav .icon-logo {
 #account-page > div .login-signup {
     width: 50%;
     height: 100%;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
     border-radius: 30px;
 }
 
@@ -737,7 +745,10 @@ nav .icon-logo {
     height: calc(100dvh - 124px);
     padding: 20px;
     overflow-y: scroll;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    /* background-color: #000000;
+    background-image: url("./image/diagmonds-light.png"); */
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
     position: relative;
 }
 #saved-content .log-out {
@@ -833,7 +844,8 @@ nav .icon-logo {
     height: calc(100vh - 124px);
     height: calc(100dvh - 124px);
     padding: 20px;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    background-color: #000000;
+    background-image: url("./image/diagmonds-light.png");
 }
 #AboutPage h1 {
     color: var(--color3);

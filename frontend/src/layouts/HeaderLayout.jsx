@@ -38,6 +38,7 @@ const linkVariants = {
 
 export default function HeaderLayout() {
   const [menu, setMenu] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   return (
     <>
       <nav>
@@ -79,7 +80,7 @@ export default function HeaderLayout() {
               <NavLink to="/contact">Contact us</NavLink>
             </motion.div>
             <motion.div variants={linkVariants} onClick={() => setMenu(false)}>
-              <NavLink to="/account">Account</NavLink>
+              <NavLink to="/account" id={isAuthenticated ? "connected" : "not-connected"}>Account</NavLink>
             </motion.div>
           </motion.li>
         </ul>
