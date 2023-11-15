@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Chef from "../image/Chef";
 import { motion } from "framer-motion";
+import { useSelector, useDispatch } from 'react-redux'
 
 const navVariants = {
   initial: {
@@ -39,6 +40,8 @@ const linkVariants = {
 export default function HeaderLayout() {
   const [menu, setMenu] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  // const isAuthenticated = useSelector()
+  // console.log(isAuthenticated)
   return (
     <>
       <nav>
