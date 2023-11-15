@@ -51,7 +51,7 @@ export default function HeaderLayout() {
             <NavLink to="/categories">Categories</NavLink>
             {/* <NavLink to="/product">Product</NavLink> */}
             <NavLink to="/contact">Contact us</NavLink>
-            <NavLink to="/account">Account</NavLink>
+            <NavLink to="/account">{isAuthenticated ? "Account" : "login"}</NavLink>
           </motion.li>
         </ul>
         <div className="menu" onClick={() => setMenu(!menu)}>
@@ -80,7 +80,7 @@ export default function HeaderLayout() {
               <NavLink to="/contact">Contact us</NavLink>
             </motion.div>
             <motion.div variants={linkVariants} onClick={() => setMenu(false)}>
-              <NavLink to="/account" id={isAuthenticated ? "connected" : "not-connected"}>Account</NavLink>
+              <NavLink to="/account">{isAuthenticated ? "Account" : "login"}</NavLink>
             </motion.div>
           </motion.li>
         </ul>

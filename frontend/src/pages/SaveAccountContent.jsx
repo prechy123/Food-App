@@ -33,6 +33,7 @@ export default function SaveAccountCom({ tokenData }) {
         }
       );
       setFoods(response.data.foods);
+      console.log(foods)
     };
     foods();
   }, [userId]);
