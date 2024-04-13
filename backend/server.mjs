@@ -14,7 +14,7 @@ app.use(
       "https://foodapp-wmqs.onrender.com",
       "http://localhost:3000",
       "http://localhost:5173",
-      "https://food-app-vuejs.onrender.com"
+      "https://food-app-vuejs.onrender.com",
     ],
     credentials: true,
   })
