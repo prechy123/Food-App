@@ -3,18 +3,22 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import router from "./routes/userRoutes.mjs";
 import cors from "cors";
-import cookieParser from "cookie-parser"
+import cookieParser from "cookie-parser";
 
 const app = express();
 
 //cors
 app.use(
   cors({
-    origin: ["https://foodapp-wmqs.onrender.com", "http://localhost:3000"],
-    credentials: true
+    origin: [
+      "https://foodapp-wmqs.onrender.com",
+      "http://localhost:3000",
+      "http://localhost:5173",
+    ],
+    credentials: true,
   })
 );
-app.use(cookieParser())
+app.use(cookieParser());
 
 app.use(express.json());
 
